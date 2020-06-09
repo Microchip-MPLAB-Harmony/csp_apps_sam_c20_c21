@@ -1,4 +1,26 @@
 /*******************************************************************************
+  CCL Peripheral Library Interface Header File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    plib_ccl.h
+
+  Summary:
+    CAN PLIB interface declarations.
+
+  Description:
+    The CAN plib provides a simple interface to manage the CAN modules on
+    Microchip microcontrollers. This file defines the interface declarations
+    for the CAN plib.
+
+  Remarks:
+    None.
+
+*******************************************************************************/
+//DOM-IGNORE-BEGIN
+/*******************************************************************************
 * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
@@ -20,24 +42,10 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+//DOM-IGNORE-END
 
-/*******************************************************************************
-  Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This file contains the "main" function for a project.
-
-  Description:
-    This file contains the "main" function for a project.  The
-    "main" function calls the "SYS_Initialize" function to initialize the state
-    machines of all modules in the system
- *******************************************************************************/
+#ifndef PLIB_CCL_H
+#define PLIB_CCL_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -45,53 +53,41 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
+/*
+ * This section lists the other files that are included in this file.
+ */
+#include <stdbool.h>
+#include <string.h>
 
+#include "device.h"
 
-/* Macro definitions */
-#define SIZE 10
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+    extern "C" {
+#endif
+// DOM-IGNORE-END
 
-/* Global variables */
-char mybuffer[]="0123456789";
-
-/* This function will be called by SPI PLIB when transfer is completed */
-void SERCOM1_SPI_Callback(uintptr_t context )
-{
-    SERCOM1_SPI_Write(mybuffer, SIZE);
-}
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Types
+// *****************************************************************************
+// *****************************************************************************
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Main Entry Point
+// Section: Interface Routines
 // *****************************************************************************
 // *****************************************************************************
+void CCL_Initialize (void);
 
-int main ( void )
-{
-    /* Initialize all modules */
-    SYS_Initialize ( NULL );
-
-    /* Register callback function   */
-    SERCOM1_SPI_CallbackRegister(SERCOM1_SPI_Callback, 0);
-
-    /* SPI Write */
-    SERCOM1_SPI_Write(mybuffer, SIZE);
-
-    while ( true )
-    {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
-        SYS_Tasks ( );
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
     }
+#endif
+// DOM-IGNORE-END
 
-    /* Execution should not come here during normal operation */
-
-    return ( EXIT_FAILURE );
-}
-
+#endif // PLIB_CCL_H
 
 /*******************************************************************************
  End of File

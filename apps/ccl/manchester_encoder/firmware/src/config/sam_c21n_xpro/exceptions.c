@@ -1,5 +1,22 @@
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+  System Exceptions File
+
+  File Name:
+    exceptions.c
+
+  Summary:
+    This file contains a function which overrides the default _weak_ exception
+    handlers provided by the interrupt.c file.
+
+  Description:
+    This file redefines the default _weak_  exception handler with a more debug
+    friendly one. If an unexpected exception occurs the code will stop in a
+    while(1) loop.
+ *******************************************************************************/
+
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -20,79 +37,44 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-
-/*******************************************************************************
-  Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This file contains the "main" function for a project.
-
-  Description:
-    This file contains the "main" function for a project.  The
-    "main" function calls the "SYS_Initialize" function to initialize the state
-    machines of all modules in the system
- *******************************************************************************/
+// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include "definitions.h"
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
+// *****************************************************************************
+// *****************************************************************************
+// Section: Exception Handling Routine
+// *****************************************************************************
+// *****************************************************************************
 
+/* Brief default interrupt handlers for core IRQs.*/
 
-/* Macro definitions */
-#define SIZE 10
-
-/* Global variables */
-char mybuffer[]="0123456789";
-
-/* This function will be called by SPI PLIB when transfer is completed */
-void SERCOM1_SPI_Callback(uintptr_t context )
+void NonMaskableInt_Handler(void)
 {
-    SERCOM1_SPI_Write(mybuffer, SIZE);
-}
-
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Main Entry Point
-// *****************************************************************************
-// *****************************************************************************
-
-int main ( void )
-{
-    /* Initialize all modules */
-    SYS_Initialize ( NULL );
-
-    /* Register callback function   */
-    SERCOM1_SPI_CallbackRegister(SERCOM1_SPI_Callback, 0);
-
-    /* SPI Write */
-    SERCOM1_SPI_Write(mybuffer, SIZE);
-
-    while ( true )
+#if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
+    __builtin_software_breakpoint();
+#endif
+    while (1)
     {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
-        SYS_Tasks ( );
     }
-
-    /* Execution should not come here during normal operation */
-
-    return ( EXIT_FAILURE );
 }
 
+void HardFault_Handler(void)
+{
+#if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
+   __builtin_software_breakpoint();
+#endif
+   while (1)
+   {
+   }
+}
 
 /*******************************************************************************
  End of File
-*/
+ */
+
