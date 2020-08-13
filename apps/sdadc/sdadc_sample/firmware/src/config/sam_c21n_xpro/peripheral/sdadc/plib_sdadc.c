@@ -103,6 +103,24 @@ void SDADC_Initialize( void )
     }
 }
 
+void SDADC_Enable( void )
+{
+    SDADC_REGS->SDADC_CTRLA |= SDADC_CTRLA_ENABLE_Msk;
+    while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
+    {
+        /* Wait for synchronization */
+    }    
+}
+
+void SDADC_Disable( void )
+{
+    SDADC_REGS->SDADC_CTRLA &= ~SDADC_CTRLA_ENABLE_Msk;
+    while((SDADC_REGS->SDADC_SYNCBUSY & SDADC_SYNCBUSY_ENABLE_Msk) == SDADC_SYNCBUSY_ENABLE_Msk)
+    {
+        /* Wait for synchronization */
+    }    
+}
+
  
 void SDADC_ConversionStart( void )
 {
