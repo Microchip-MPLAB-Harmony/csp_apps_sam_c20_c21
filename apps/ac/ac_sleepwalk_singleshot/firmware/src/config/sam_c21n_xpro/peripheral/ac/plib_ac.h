@@ -48,7 +48,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "atsamc21n18a.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -69,6 +68,28 @@ typedef enum
     AC_CHANNEL2 = 2,
     AC_CHANNEL3 = 3,
 }AC_CHANNEL;
+
+typedef enum
+{
+    AC_POSINPUT_PIN0 = AC_COMPCTRL_MUXPOS_PIN0,
+    AC_POSINPUT_PIN1 = AC_COMPCTRL_MUXPOS_PIN1,
+    AC_POSINPUT_PIN2 = AC_COMPCTRL_MUXPOS_PIN2,
+    AC_POSINPUT_PIN3 = AC_COMPCTRL_MUXPOS_PIN3,
+    AC_POSINPUT_VSCALE = AC_COMPCTRL_MUXPOS_VSCALE,
+}AC_POSINPUT;
+
+
+typedef enum
+{
+    AC_NEGINPUT_PIN0 = AC_COMPCTRL_MUXNEG_PIN0,
+    AC_NEGINPUT_PIN1 = AC_COMPCTRL_MUXNEG_PIN1,
+    AC_NEGINPUT_PIN2 = AC_COMPCTRL_MUXNEG_PIN2,
+    AC_NEGINPUT_PIN3 = AC_COMPCTRL_MUXNEG_PIN3,
+    AC_NEGINPUT_GND = AC_COMPCTRL_MUXNEG_GND,
+    AC_NEGINPUT_VSCALE = AC_COMPCTRL_MUXNEG_VSCALE,
+    AC_NEGINPUT_BANDGAP = AC_COMPCTRL_MUXNEG_BANDGAP,
+    AC_NEGINPUT_DAC = AC_COMPCTRL_MUXNEG_DAC,
+}AC_NEGINPUT;
 
 typedef void (*AC_CALLBACK) (uint8_t int_flags, uintptr_t context);
 
@@ -97,5 +118,11 @@ bool AC_StatusGet (AC_CHANNEL channel);
 void AC_CallbackRegister (AC_CALLBACK callback, uintptr_t context);
 
 void AC_SetVddScalar( AC_CHANNEL channel_id , uint8_t vdd_scalar);
+
+void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEGINPUT negativeInput);
+
+#ifdef __cplusplus // Provide C++ Compatibility
+}
+#endif
 
 #endif /* PLIB_AC_H */

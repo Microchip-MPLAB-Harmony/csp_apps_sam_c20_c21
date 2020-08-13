@@ -65,18 +65,14 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for GPIO_PC05 pin ***/
 #define GPIO_PC05_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 5)
 #define GPIO_PC05_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 5)
 #define GPIO_PC05_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 5)
-#define GPIO_PC05_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 5)) & 0x01)
 #define GPIO_PC05_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 5)
 #define GPIO_PC05_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 5)
+#define GPIO_PC05_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 5)) & 0x01)
 #define GPIO_PC05_PIN                  PORT_PIN_PC05
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -985,7 +981,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1024,7 +1020,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
