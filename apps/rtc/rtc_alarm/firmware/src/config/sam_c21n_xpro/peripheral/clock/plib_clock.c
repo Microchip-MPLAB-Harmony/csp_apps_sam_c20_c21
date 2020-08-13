@@ -67,7 +67,7 @@ static void OSC32KCTRL_Initialize(void)
 {
     /****************** OSC32K Initialization  ******************************/
 
-   uint32_t calibValue = (((*(uint32_t*)0x806020) >> 12 ) & 0x7f);
+    uint32_t calibValue = (((*(uint32_t*)0x806020) >> 12 ) & 0x7f);
 
     /* Configure 32K RC oscillator */
     OSC32KCTRL_REGS->OSC32KCTRL_OSC32K = OSC32KCTRL_OSC32K_CALIB(calibValue) | OSC32KCTRL_OSC32K_STARTUP(0) | OSC32KCTRL_OSC32K_ENABLE_Msk | OSC32KCTRL_OSC32K_EN1K_Msk | OSC32KCTRL_OSC32K_EN32K_Msk ;
@@ -77,14 +77,14 @@ static void OSC32KCTRL_Initialize(void)
         /* Waiting for the OSC32K Ready state */
     }
 
-	OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
+    OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
 }
 
 
 
 static void GCLK0_Initialize(void)
 {
-    
+
     GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(1) | GCLK_GENCTRL_SRC(6) | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL0_Msk) == GCLK_SYNCBUSY_GENCTRL0_Msk)
@@ -104,13 +104,15 @@ void CLOCK_Initialize (void)
     GCLK0_Initialize();
 
 
-	/* Selection of the Generator and write Lock for SERCOM4_CORE */
+    /* Selection of the Generator and write Lock for SERCOM4_CORE */
     GCLK_REGS->GCLK_PCHCTRL[23] = GCLK_PCHCTRL_GEN(0x0)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[23] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
         /* Wait for synchronization */
     }
+
+
 
     /* Configure the APBC Bridge Clocks */
     MCLK_REGS->MCLK_APBCMASK = 0x20;
