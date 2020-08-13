@@ -88,7 +88,7 @@ void SERCOM5_I2C_Initialize(void)
     while(SERCOM5_REGS->I2CS.SERCOM_SYNCBUSY);
 
      /* Set Operation Mode to I2C Slave */
-    SERCOM5_REGS->I2CS.SERCOM_CTRLA = SERCOM_I2CS_CTRLA_MODE_I2C_SLAVE | SERCOM_I2CS_CTRLA_SDAHOLD_75NS ;
+    SERCOM5_REGS->I2CS.SERCOM_CTRLA = SERCOM_I2CS_CTRLA_MODE_I2C_SLAVE | SERCOM_I2CS_CTRLA_SDAHOLD_75NS | SERCOM_I2CM_CTRLA_SCLSM(0) ;
     /* Wait for synchronization */
     while(SERCOM5_REGS->I2CS.SERCOM_SYNCBUSY);
 
@@ -138,7 +138,13 @@ void SERCOM5_I2C_WriteByte(uint8_t wrByte)
 
 SERCOM_I2C_SLAVE_ERROR SERCOM5_I2C_ErrorGet(void)
 {
-    return (SERCOM5_REGS->I2CS.SERCOM_STATUS & SERCOM_I2C_SLAVE_ERROR_ALL);
+    SERCOM_I2C_SLAVE_ERROR error;
+    error = (SERCOM5_REGS->I2CS.SERCOM_STATUS & SERCOM_I2C_SLAVE_ERROR_ALL);
+
+    /* Clear all error bits */
+    SERCOM5_REGS->I2CS.SERCOM_STATUS = SERCOM_I2C_SLAVE_ERROR_ALL;
+
+    return error;
 }
 
 SERCOM_I2C_SLAVE_TRANSFER_DIR SERCOM5_I2C_TransferDirGet(void)
@@ -248,6 +254,8 @@ void SERCOM5_I2C_InterruptHandler(void)
             {
                 sercom5I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_ERROR, sercom5I2CSObj.context);
             }
+
+            SERCOM5_REGS->I2CS.SERCOM_INTFLAG = SERCOM_I2CS_INTFLAG_ERROR_Msk;
         }
     }
 }
