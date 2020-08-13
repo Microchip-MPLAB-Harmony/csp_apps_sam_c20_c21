@@ -112,12 +112,6 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     
-    printf("\n\n\r-----------------------------------------------");
-    printf("\n\n\r          AC PWM GENERATION                    ");
-    printf("\n\n\r-----------------------------------------------");
-    
-    printf("\n\n\rConnect pin PA04(comparator0 Input) to pin PA02(DAC output) and observe compare output on pin PA12");
-    
     EIC_CallbackRegister(EIC_PIN_3, switch_handler, (uintptr_t) NULL);
     TC0_TimerCallbackRegister(TC0_CallBack_Function, (uintptr_t)NULL);
     TC0_TimerStart();

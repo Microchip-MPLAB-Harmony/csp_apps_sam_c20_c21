@@ -40,23 +40,13 @@ The following table shows the target hardware for the application projects.
 
 ## Running the Application
 
-1. Open the Terminal application (Ex.:Tera term) on the computer
-2. Connect to the EDBG Virtual COM port and configure the serial settings as follows:
-    - Baud : 115200
-    - Data : 8 Bits
-    - Parity : None
-    - Stop : 1 Bit
-    - Flow Control : None
-3. Build and Program the application using its IDE
-4. Observe output message in console as follows (*NOTE: Pin numbers will vary as per the device*):
+1. Build and Program the application using its IDE
 
-    ![output_1](images/output_ac_wav_gen_1.png)
-
-5. Observe the PWM waveform using the oscilloscope connected to the PWM output pin
+2. Observe the PWM waveform using the oscilloscope connected to the PWM output pin
 
     ![output_2](images/output_ac_wav_gen_2.png)
 
-6. Press switch to change the duty cycle of PWM waveform
+3. Press switch to change the duty cycle of PWM waveform
 
 Refer to the following table for pwm output and switch details:
 
