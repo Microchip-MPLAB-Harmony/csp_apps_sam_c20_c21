@@ -60,8 +60,8 @@ typedef void (*EVSYS_CALLBACK)(uint32_t int_cause, uintptr_t context);
 
 typedef enum
 {
-	EVSYS_INT_OVERRUN = EVSYS_INTENSET_OVR0_Msk,
-	EVSYS_INT_EVENT_DETECT = EVSYS_INTENSET_EVD0_Msk,
+   EVSYS_INT_OVERRUN = EVSYS_INTENSET_OVR0_Msk,
+   EVSYS_INT_EVENT_DETECT = EVSYS_INTENSET_EVD0_Msk,
 } EVSYS_INT_MASK;
 
 typedef enum
@@ -72,14 +72,14 @@ typedef enum
 
 typedef struct
 {
-	EVSYS_CALLBACK          callback;
-	uintptr_t               context;
+   EVSYS_CALLBACK          callback;
+   uintptr_t               context;
 } EVSYS_OBJECT ;
 /***************************** EVSYS API *******************************/
 void EVSYS_Initialize( void );
 void EVSYS_CallbackRegister( EVSYS_CHANNEL channel, EVSYS_CALLBACK callback, uintptr_t context );
-void EVSYS_InterruptDisable( EVSYS_CHANNEL channel, EVSYS_INT_MASK interrupt );
-void EVSYS_InterruptEnable( EVSYS_CHANNEL channel,EVSYS_INT_MASK interrupt );
+void EVSYS_InterruptDisable( EVSYS_CHANNEL channel, EVSYS_INT_MASK interruptMask );
+void EVSYS_InterruptEnable( EVSYS_CHANNEL channel,EVSYS_INT_MASK interruptMask );
 
 #ifdef __cplusplus // Provide C++ Compatibility
  }

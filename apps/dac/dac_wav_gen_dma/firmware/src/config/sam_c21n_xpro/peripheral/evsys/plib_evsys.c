@@ -40,36 +40,36 @@
 
 #include "plib_evsys.h"
 
-EVSYS_OBJECT evsys[12];
+EVSYS_OBJECT evsys[1];
 
 void EVSYS_Initialize( void )
-{	/*Event Channel User Configuration*/
-	EVSYS_REGS->EVSYS_USER[38] = EVSYS_USER_CHANNEL(0x1);
+{    /*Event Channel User Configuration*/
+    EVSYS_REGS->EVSYS_USER[38] = EVSYS_USER_CHANNEL(0x1);
 
-	/* Event Channel 0 Configuration */
-	EVSYS_REGS->EVSYS_CHANNEL[0] = EVSYS_CHANNEL_EVGEN(52) | EVSYS_CHANNEL_PATH(2) | EVSYS_CHANNEL_EDGSEL(1) \
-									 | EVSYS_CHANNEL_ONDEMAND_Msk;
+    /* Event Channel 0 Configuration */
+    EVSYS_REGS->EVSYS_CHANNEL[0] = EVSYS_CHANNEL_EVGEN(52) | EVSYS_CHANNEL_PATH(2) | EVSYS_CHANNEL_EDGSEL(1) \
+                                     | EVSYS_CHANNEL_ONDEMAND_Msk;
 
 
-	/*Interrupt setting for Event System*/
-	EVSYS_REGS->EVSYS_INTENSET = 0x10000;
+    /*Interrupt setting for Event System*/
+    EVSYS_REGS->EVSYS_INTENSET = 0x10000;
 }
 
 
-void EVSYS_InterruptEnable(EVSYS_CHANNEL channel, EVSYS_INT_MASK interrupt)
+void EVSYS_InterruptEnable(EVSYS_CHANNEL channel, EVSYS_INT_MASK interruptMask)
 {
-	EVSYS_REGS->EVSYS_INTENSET = interrupt << channel;
+   EVSYS_REGS->EVSYS_INTENSET = interruptMask << channel;
 }
 
-void EVSYS_InterruptDisable(EVSYS_CHANNEL channel, EVSYS_INT_MASK interrupt)
+void EVSYS_InterruptDisable(EVSYS_CHANNEL channel, EVSYS_INT_MASK interruptMask)
 {
-	EVSYS_REGS->EVSYS_INTENCLR = interrupt << channel;
+   EVSYS_REGS->EVSYS_INTENCLR = interruptMask << channel;
 }
 
 void EVSYS_CallbackRegister(EVSYS_CHANNEL channel, EVSYS_CALLBACK callback, uintptr_t context )
 {
-	evsys[channel].callback = callback;
-	evsys[channel].context = context;
+   evsys[channel].callback = callback;
+   evsys[channel].context = context;
 }
 
 void EVSYS_InterruptHandler( void )
@@ -79,7 +79,7 @@ void EVSYS_InterruptHandler( void )
     uint32_t overrunIntFlagStatus = 0;
 
     /* Find any triggered channels, run associated callback handlers */
-    for (currentChannel = 0; currentChannel < 12; currentChannel++)
+    for (currentChannel = 0; currentChannel < 1; currentChannel++)
     {
 
         /* Read the interrupt flag status */
