@@ -38,8 +38,8 @@ The following table shows the target hardware for the application projects.
 
     | SAMC21N XPRO - 1  | SAMC21N XPRO - 2   |
     | ----------------- | ------------------ |
-    | CAN_H, PIN 1      | CAN_H, PIN 1       |
-    | CAN_L, PIN 2      | CAN_L, PIN 2       |
+    | CANH, CAN 1       | CANH, CAN 1        |
+    | CANL, CAN 1       | CANL, CAN 1        |
     | GND, EXT1 PIN19   | GND, EXT1 PIN19    |
     |||
 
