@@ -164,10 +164,10 @@ void CAN1_Initialize(void)
     CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
 
     /* Set Data Bit Timing and Prescaler Register */
-    CAN1_REGS->CAN_DBTP = CAN_DBTP_DTSEG2(5) | CAN_DBTP_DTSEG1(16) | CAN_DBTP_DBRP(0) | CAN_DBTP_DSJW(3);
+    CAN1_REGS->CAN_DBTP = CAN_DBTP_DTSEG2(5) | CAN_DBTP_DTSEG1(16) | CAN_DBTP_DBRP(0) | CAN_DBTP_DSJW(5);
 
     /* Set Nominal Bit timing and Prescaler Register */
-    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(23) | CAN_NBTP_NTSEG1(70) | CAN_NBTP_NBRP(0) | CAN_NBTP_NSJW(3);
+    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(23) | CAN_NBTP_NTSEG1(70) | CAN_NBTP_NBRP(0) | CAN_NBTP_NSJW(23);
 
     /* Receive Buffer / FIFO Element Size Configuration Register */
     CAN1_REGS->CAN_RXESC = 0  | CAN_RXESC_F0DS(7) | CAN_RXESC_F1DS(7) | CAN_RXESC_RBDS(7);
