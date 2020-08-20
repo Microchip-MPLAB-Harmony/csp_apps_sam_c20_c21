@@ -65,36 +65,32 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for LED pin ***/
 #define LED_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 5)
 #define LED_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 5)
 #define LED_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 5)
-#define LED_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 5)) & 0x01)
 #define LED_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 5)
 #define LED_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 5)
+#define LED_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 5)) & 0x01)
 #define LED_PIN                  PORT_PIN_PC05
 
 /*** Macros for LIN_EN pin ***/
 #define LIN_EN_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 15)
 #define LIN_EN_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 15)
 #define LIN_EN_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 15)
-#define LIN_EN_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 15)) & 0x01)
 #define LIN_EN_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 15)
 #define LIN_EN_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 15)
+#define LIN_EN_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 15)) & 0x01)
 #define LIN_EN_PIN                  PORT_PIN_PC15
 
 /*** Macros for SWITCH pin ***/
 #define SWITCH_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 19)
 #define SWITCH_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 19)
 #define SWITCH_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 19)
-#define SWITCH_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 19)) & 0x01)
 #define SWITCH_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 19)
 #define SWITCH_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 19)
+#define SWITCH_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 19)) & 0x01)
 #define SWITCH_PIN                  PORT_PIN_PB19
-
-
-
 // *****************************************************************************
 /* PORT Group
 

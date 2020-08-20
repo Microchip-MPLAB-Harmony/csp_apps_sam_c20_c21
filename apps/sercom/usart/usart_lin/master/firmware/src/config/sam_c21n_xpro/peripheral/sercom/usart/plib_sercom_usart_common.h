@@ -309,9 +309,9 @@ typedef enum
 
     /* Threshold number of free space is available in the transmit ring buffer */
     SERCOM_USART_EVENT_WRITE_THRESHOLD_REACHED,
-	
-	/* Recevie break signal is detected */
-	SERCOM_USART_EVENT_BREAK_SIGNAL_DETECTED,
+
+    /* Recevie break signal is detected */
+    SERCOM_USART_EVENT_BREAK_SIGNAL_DETECTED,
 }SERCOM_USART_EVENT;
 
 // *****************************************************************************

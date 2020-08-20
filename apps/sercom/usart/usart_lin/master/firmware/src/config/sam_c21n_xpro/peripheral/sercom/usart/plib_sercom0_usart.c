@@ -132,7 +132,7 @@ void SERCOM0_USART_Initialize( void )
     /* Enable error interrupt */
     SERCOM0_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_ERROR_Msk;
 
-	/* Enable Receive Complete interrupt */
+    /* Enable Receive Complete interrupt */
     SERCOM0_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_RXC_Msk;
 }
 
@@ -618,14 +618,14 @@ void static SERCOM0_USART_ISR_ERR_Handler( void )
 
 void static SERCOM0_USART_ISR_RX_Handler( void )
 {
-	if (SERCOM0_USART_RxPushByte( SERCOM0_REGS->USART_INT.SERCOM_DATA) == true)
-	{
-		SERCOM0_USART_ReadNotificationSend();
-	}
-	else
-	{
-		/* UART RX buffer is full */
-	}
+    if (SERCOM0_USART_RxPushByte( SERCOM0_REGS->USART_INT.SERCOM_DATA) == true)
+    {
+        SERCOM0_USART_ReadNotificationSend();
+    }
+    else
+    {
+        /* UART RX buffer is full */
+    }
 }
 
 void static SERCOM0_USART_ISR_TX_Handler( void )
@@ -660,7 +660,7 @@ void SERCOM0_USART_InterruptHandler( void )
         {
             SERCOM0_USART_ISR_RX_Handler();
         }
-		
+
         /* Checks for error flag */
         if((SERCOM0_REGS->USART_INT.SERCOM_INTENSET & SERCOM_USART_INT_INTENSET_ERROR_Msk) && (SERCOM0_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_ERROR_Msk))
         {
