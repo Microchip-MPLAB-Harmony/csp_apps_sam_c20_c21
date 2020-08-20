@@ -32,6 +32,7 @@
           <itemPath>../src/config/sam_c21n_xpro/device_cache.h</itemPath>
           <itemPath>../src/config/sam_c21n_xpro/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_c21n_xpro/definitions.h</itemPath>
+          <itemPath>../src/config/sam_c21n_xpro/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -72,7 +73,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21N18A_DFP/pio/samc21n18a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMC21N18A_DFP/device.h</itemPath>
           <itemPath>../src/packs/ATSAMC21N18A_DFP/atsamc21n18a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -88,11 +88,20 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_c21n_xpro/harmony.prj</itemPath>
+      <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.xml</itemPath>
+      <itemPath>../../../../../../../../mhc/../csp_apps_sam_c20_c21/apps/sercom/usart/usart_lin/slave/firmware/src/config/sam_c21n_xpro/sam_c21n_xpro.xml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -136,13 +145,6 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_c21n_xpro/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.xml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -319,7 +321,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
