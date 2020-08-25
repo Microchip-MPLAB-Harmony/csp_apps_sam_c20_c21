@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="f2" displayName="config" projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_c21_xpro" projectFiles="true">
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="ccl" projectFiles="true">
@@ -26,19 +26,20 @@
               <itemPath>../src/config/sam_c21_xpro/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f1" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_c21_xpro/peripheral/sercom/spim/plib_sercom1_spi.h</itemPath>
-                <itemPath>../src/config/sam_c21_xpro/peripheral/sercom/spim/plib_sercom_spi_common.h</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_c21_xpro/peripheral/sercom/spi_master/plib_sercom1_spi_master.h</itemPath>
+                <itemPath>../src/config/sam_c21_xpro/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <itemPath>../src/config/sam_c21_xpro/device_cache.h</itemPath>
           <itemPath>../src/config/sam_c21_xpro/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_c21_xpro/definitions.h</itemPath>
+          <itemPath>../src/config/sam_c21_xpro/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="packs" projectFiles="true">
-        <logicalFolder name="f2" displayName="ATSAMC21J18A_DFP" projectFiles="true">
+      <logicalFolder name="f2" displayName="packs" projectFiles="true">
+        <logicalFolder name="f1" displayName="ATSAMC21J18A_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21J18A_DFP/component/ac.h</itemPath>
             <itemPath>../src/packs/ATSAMC21J18A_DFP/component/adc.h</itemPath>
@@ -75,22 +76,22 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21J18A_DFP/pio/samc21j18a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMC21J18A_DFP/device.h</itemPath>
           <itemPath>../src/packs/ATSAMC21J18A_DFP/atsamc21j18a.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
+        <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
             <logicalFolder name="f1" displayName="Core" projectFiles="true">
               <logicalFolder name="f1" displayName="Include" projectFiles="true">
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -101,10 +102,18 @@
                    displayName="Important Files"
                    projectFiles="true">
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_c21_xpro/harmony.prj</itemPath>
+      <itemPath>../src/config/sam_c21_xpro/harmony-manifest-success.yml</itemPath>
+      <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.xml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_c21_xpro" projectFiles="true">
+          <itemPath>../src/config/sam_c21_xpro/ATSAMC21J18A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -131,8 +140,8 @@
               <itemPath>../src/config/sam_c21_xpro/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f1" displayName="spim" projectFiles="true">
-                <itemPath>../src/config/sam_c21_xpro/peripheral/sercom/spim/plib_sercom1_spi.c</itemPath>
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_c21_xpro/peripheral/sercom/spi_master/plib_sercom1_spi_master.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -162,12 +171,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.40</languageToolchainVersion>
+        <languageToolchainVersion>2.41</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMC21_DFP" vendor="Microchip" version="3.3.72"/>
-        <pack name="CMSIS" vendor="ARM" version="5.0.1"/>
+        <pack name="SAMC21_DFP" vendor="Microchip" version="3.4.78"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -324,7 +333,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_c21_xpro;../src/packs/ATSAMC21J18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -356,6 +366,8 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
@@ -365,6 +377,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -389,6 +402,9 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.log_level" value="0"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

@@ -57,8 +57,8 @@ The following table shows the target hardware for the application projects.
 
     |Board| MOSI pin | SCK pin  | CCL_OUT pin |
     |-----|----------|----------|-------------|
-    | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro) | PA17 (EXT2 pin 12) | PA16 (EXT2 pin 11) | PA11 (EXT1 pin 6) |
-    | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMC21-XPRO) | PA17 (EXT1 pin 15) | PA16 (EXT1 pin 17) | PA11 (EXT2 pin 6) |
+    | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro) |PA16 (EXT2 pin 11)  | PA17 (EXT2 pin 12) | PA11 (EXT1 pin 6) |
+    | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMC21-XPRO) | PA16 (EXT1 pin 17)  | PA17 (EXT1 pin 15) | PA11 (EXT2 pin 6) |
     ||||
 
 5. Build and Program the application using its IDE
