@@ -1,3 +1,10 @@
+---
+parent: Harmony 3 peripheral library application examples for SAM C20/C21 family
+title: NVMCTRL flash read while write (RWW) 
+has_children: false
+has_toc: false
+---
+
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
 # NVMCTRL flash read while write (RWW)
@@ -10,9 +17,8 @@ The main Flash memory can not be read while it is being erased or written, the C
 
 ## Downloading and building the application
 
-To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21) and click
-
-![clone](../../../docs/images/clone.png)
+To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_c20_c21) and then click **Clone** button to clone this repository or download as zip file.
+This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
 Path of the application within the repository is **apps/nvmctrl/nvmctrl_flash_read_while_write/firmware** .
 
