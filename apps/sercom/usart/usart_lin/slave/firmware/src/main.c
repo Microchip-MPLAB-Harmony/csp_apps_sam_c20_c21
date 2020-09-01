@@ -40,7 +40,7 @@ bool ledStatus = false;
 uint16_t checksum = 0;
 volatile bool breakDetected = false;
 
-void LIN_MasterChecksumAdd(uint8_t* pBuffer, uint8_t nBytes)
+void LIN_SlaveChecksumAdd(uint8_t* pBuffer, uint8_t nBytes)
 {
     uint8_t i;
     
@@ -50,13 +50,13 @@ void LIN_MasterChecksumAdd(uint8_t* pBuffer, uint8_t nBytes)
     }
 }
 
-uint8_t LIN_MasterChecksumGet(void)
+uint8_t LIN_SlaveChecksumGet(void)
 {             
     checksum = 0xFF ^ ((checksum & 0x00FF) + (checksum >> 8));
     return (uint8_t)checksum;
 }
 
-void LIN_MasterLocalEchoRead(uint8_t nBytes)
+void LIN_SlaveLocalEchoRead(uint8_t nBytes)
 {
     while (SERCOM0_USART_ReadCountGet() < nBytes);
         
@@ -102,12 +102,12 @@ int main ( void )
                 txBuffer[0] = ((ledStatus << 1) | (SWITCH_Get()));
                 
                 checksum = 0;
-                LIN_MasterChecksumAdd(txBuffer, 1);
-                txBuffer[1] = LIN_MasterChecksumGet();
+                LIN_SlaveChecksumAdd(txBuffer, 1);
+                txBuffer[1] = LIN_SlaveChecksumGet();
                 
                 SERCOM0_USART_Write(txBuffer, 2);
                 
-                LIN_MasterLocalEchoRead(2);
+                LIN_SlaveLocalEchoRead(2);
             }
             else if (rxBuffer[0] == 0xC1)
             {
@@ -120,8 +120,8 @@ int main ( void )
                 
                 /* Verify the received checksum against calculated checksum */
                 checksum = 0;
-                LIN_MasterChecksumAdd(rxBuffer, 2);
-                if (rxBuffer[2] == LIN_MasterChecksumGet())
+                LIN_SlaveChecksumAdd(rxBuffer, 2);
+                if (rxBuffer[2] == LIN_SlaveChecksumGet())
                 {
                     /* Check the LED state requested by LIN master */
                     if (rxBuffer[1] & 0x01)
