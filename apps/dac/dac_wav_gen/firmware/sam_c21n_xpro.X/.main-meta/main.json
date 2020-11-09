@@ -1,0 +1,73 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.dac_wav_gen",
+		"version": "1.0.0",
+		"displayName": "DAC waveform generation Example for SAM C20/C21 Family",
+		"projectName": "dac_wav_gen_sam_c21n_xpro",
+		"shortDescription": "This example application shows how to use the DAC to generate a 1 KHz Sine or Sawtooth wave with a lookup table.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMC21_DFP",
+			"semverRange": "^3.3.72"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMC21N18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			"MHC",
+			[
+				"Peripherals", "DAC"
+			]
+		],
+		"peripherals": [
+			"DAC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMC21N18A",
+			"SAM C20/C21 Family",
+			"CDAC",
+			"Control DAC",
+			"DAC",
+			"Digital to Analog Converter",
+			"Analog",
+			"AC Voltage"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

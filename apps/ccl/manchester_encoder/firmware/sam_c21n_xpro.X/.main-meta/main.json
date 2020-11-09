@@ -1,0 +1,72 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.manchester_encoder",
+		"version": "1.0.0",
+		"displayName": "CCL Manchester Encoder Example for SAM C20/C21 Family",
+		"projectName": "manchester_encoder_sam_c21n_xpro",
+		"shortDescription": "This example application shows how to use the CCL peripheral library and generate a Manchester-encoded output.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.0.1"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMC21N18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			"MHC",
+			[
+				"Peripherals", "CCL"
+			]
+		],
+		"peripherals": [
+			"CCL"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMC21N18A",
+			"SAM C20/C21 Family",
+			"CCL",
+			"Configurable Custom Logic",
+			"CLC",
+			"Configurable Logic Cell",
+			"Logic"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

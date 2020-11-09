@@ -1,0 +1,69 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.freqm_measure_clock_freq",
+		"version": "1.0.0",
+		"displayName": "FREQM measurement Example for SAM C20/C21 Family",
+		"projectName": "freqm_measure_clock_freq_sam_c21n_xpro",
+		"shortDescription": "This example application demonstrates how to use the FREQM peripheral to measure the frequency of the internal RC Oscillator.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMC21_DFP",
+			"semverRange": "^3.3.72"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMC21N18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			"MHC",
+			[
+				"Peripherals", "FREQM"
+			]
+		],
+		"peripherals": [
+			"FREQM"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMC21N18A",
+			"SAM C20/C21 Family",
+			"FREQM",
+			"Frequency Meter"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
