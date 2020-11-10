@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.rstc_reset_cause",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_rstc_reset_cause",
+		"version": "3.0.2",
 		"displayName": "RSTC reset cause Example for SAM C20/C21 Family",
 		"projectName": "rstc_reset_cause_sam_c21n_xpro",
 		"shortDescription": "This example shows how to use the RSTC peripheral to indicate the cause of the device reset.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "RSTC"
+			],
 			[
 				"Peripherals", "RSTC"
 			]

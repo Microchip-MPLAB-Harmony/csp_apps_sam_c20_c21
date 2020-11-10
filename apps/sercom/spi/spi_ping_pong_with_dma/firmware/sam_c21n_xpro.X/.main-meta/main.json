@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.spi_ping_pong_with_dma",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_spi_ping_pong_with_dma",
+		"version": "3.0.2",
 		"displayName": "SERCOM SPI ping pong with DMA Example for SAM C20/C21 Family",
 		"projectName": "spi_ping_pong_with_dma_sam_c21n_xpro",
 		"shortDescription": "This example demonstrates how to continuously transmit and receive data over a SPI interface using ping pong buffers with DMA.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "SERCOM"
+			],
 			[
 				"Peripherals", "SERCOM"
 			]

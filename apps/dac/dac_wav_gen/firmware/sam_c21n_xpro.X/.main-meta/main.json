@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.dac_wav_gen",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_dac_wav_gen",
+		"version": "3.0.2",
 		"displayName": "DAC waveform generation Example for SAM C20/C21 Family",
 		"projectName": "dac_wav_gen_sam_c21n_xpro",
 		"shortDescription": "This example application shows how to use the DAC to generate a 1 KHz Sine or Sawtooth wave with a lookup table.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "DAC"
+			],
 			[
 				"Peripherals", "DAC"
 			]

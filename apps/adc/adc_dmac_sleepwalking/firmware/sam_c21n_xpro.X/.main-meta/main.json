@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.adc_dmac_sleepwalking",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_adc_dmac_sleepwalking",
+		"version": "3.0.2",
 		"displayName": "ADC DMA sleepwalking Example for SAM C20/C21 Family",
 		"projectName": "adc_dmac_sleepwalking_sam_c21n_xpro",
 		"shortDescription": "This application shows how to configure the ADC in a sleepwalking operation, where the input voltage is measured at a fixed interval, and then the device is woken from sleep after conversion of 16 samples.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "ADC"
+			],
 			[
 				"Peripherals", "ADC"
 			]

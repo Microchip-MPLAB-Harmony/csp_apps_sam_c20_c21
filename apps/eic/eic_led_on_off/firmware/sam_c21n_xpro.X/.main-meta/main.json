@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.eic_led_on_off",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_eic_led_on_off",
+		"version": "3.0.2",
 		"displayName": "EIC Interrupt Example for SAM C20/C21 Family",
 		"projectName": "eic_led_on_off_sam_c21n_xpro",
 		"shortDescription": "This example application demonstrates how to generate interrupt using the EIC on switch press and indicate it through an LED.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "EIC"
+			],
 			[
 				"Peripherals", "EIC"
 			]

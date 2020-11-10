@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.usart_echo_interrupt",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_usart_echo_interrupt",
+		"version": "3.0.2",
 		"displayName": "SERCOM USART interrupt Example for SAM C20/C21 Family",
 		"projectName": "usart_echo_interrupt_sam_c21n_xpro",
 		"shortDescription": "This example application demonstrates how to use the SERCOM peripheral in USART mode to transfer data in a non-blocking manner.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "SERCOM"
+			],
 			[
 				"Peripherals", "SERCOM"
 			]

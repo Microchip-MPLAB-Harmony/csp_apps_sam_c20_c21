@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.tcc_synchronous_pwm_channels",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_tcc_synchronous_pwm_channels",
+		"version": "3.0.2",
 		"displayName": "TCC PWM generation Example for SAM C20/C21 Family",
 		"projectName": "tcc_synchronous_pwm_channels_sam_c21n_xpro",
 		"shortDescription": "This example application shows how to use the TCC to generate a 2 or 3 phase PWM signals for motor control with dead time.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "TCC"
+			],
 			[
 				"Peripherals", "TCC"
 			]

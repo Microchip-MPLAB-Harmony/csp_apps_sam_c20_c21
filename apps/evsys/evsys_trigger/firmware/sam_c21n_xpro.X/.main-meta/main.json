@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.evsys_trigger",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_evsys_trigger",
+		"version": "3.0.2",
 		"displayName": "EVSYS trigger Example for SAM C20/C21 Family",
 		"projectName": "evsys_trigger_sam_c21n_xpro",
 		"shortDescription": "This example application demonstrates how to use the EVSYS Peripheral library to setup autonomous, low-latency and configurable communication between peripherals.",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "EVSYS"
+			],
 			[
 				"Peripherals", "EVSYS"
 			]

@@ -3,8 +3,8 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.master",
-		"version": "1.0.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_c20_c21_master",
+		"version": "3.0.2",
 		"displayName": "SERCOM USART LIN Master Example for SAM C20/C21 Family",
 		"projectName": "usart_lin_master_sam_c21n_xpro",
 		"shortDescription": "This example application demonstrates how to use the SERCOM USART peripheral in LIN Master mode",
@@ -38,7 +38,12 @@
 		},
 		"author": "Microchip",
 		"subcategories": [
-			"MHC",
+			[
+				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "SERCOM"
+			],
 			[
 				"Peripherals", "SERCOM"
 			]
