@@ -1,20 +1,20 @@
 /*******************************************************************************
-  SysTick Peripheral Library
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_systick.c
+    interrupt.h
 
   Summary:
-    Systick Source File
+    Interrupt vectors mapping
 
   Description:
-    None
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
-*******************************************************************************/
-
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -36,62 +36,31 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#include "device.h"
-#include "interrupts.h"
-#include "plib_systick.h"
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
-
-void SYSTICK_TimerInitialize ( void )
-{
-    SysTick->CTRL = 0U;
-    SysTick->VAL = 0U;
-    SysTick->LOAD = 0x493E00U - 1U;
-    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk;
-}
-
-void SYSTICK_TimerRestart ( void )
-{
-    SysTick->CTRL &= ~(SysTick_CTRL_ENABLE_Msk);
-    SysTick->VAL = 0U;
-    SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
-}
-
-void SYSTICK_TimerStart ( void )
-{
-    SysTick->VAL = 0U;
-    SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
-}
-
-void SYSTICK_TimerStop ( void )
-{
-    SysTick->CTRL &= ~(SysTick_CTRL_ENABLE_Msk);
-}
-
-void SYSTICK_TimerPeriodSet ( uint32_t period )
-{
-    SysTick->LOAD = period - 1U;
-}
-
-uint32_t SYSTICK_TimerPeriodGet ( void )
-{
-        return(SysTick->LOAD);
-}
-
-uint32_t SYSTICK_TimerCounterGet ( void )
-{
-    return (SysTick->VAL);
-}
-
-uint32_t SYSTICK_TimerFrequencyGet ( void )
-{
-    return (SYSTICK_FREQ);
-}
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+#include <stdint.h>
 
 
-bool SYSTICK_TimerPeriodHasExpired(void)
-{
-   return ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) > 0U);
-}
+// *****************************************************************************
+// *****************************************************************************
+// Section: Handler Routines
+// *****************************************************************************
+// *****************************************************************************
 
+void Reset_Handler (void);
+void NonMaskableInt_Handler (void);
+void HardFault_Handler (void);
+void EIC_InterruptHandler (void);
+
+
+
+#endif // INTERRUPTS_H
