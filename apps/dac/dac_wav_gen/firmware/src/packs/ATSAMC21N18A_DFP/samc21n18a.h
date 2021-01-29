@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-11-19T08:47:45Z */
+/* file generated from device description version 2020-12-11T17:48:13Z */
 #ifndef _SAMC21N18A_H_
 #define _SAMC21N18A_H_
 
@@ -82,12 +82,11 @@ typedef enum IRQn
   PendSV_IRQn               =  -2, /**< -2  Pendable request for system service */
   SysTick_IRQn              =  -1, /**< -1  System Tick Timer                   */
 /******  SAMC21N18A specific Interrupt Numbers ***********************************/
-  OSC32KCTRL_IRQn           =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSC32KCTRL) */
-  OSCCTRL_IRQn              =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (OSCCTRL) */
-  MCLK_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (MCLK) */
-  PAC_IRQn                  =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PAC) */
-  SUPC_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (SUPC) */
-  PM_IRQn                   =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC PM SUPC (PM) */
+  OSC32KCTRL_IRQn           =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC SUPC (OSC32KCTRL) */
+  OSCCTRL_IRQn              =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC SUPC (OSCCTRL) */
+  PAC_IRQn                  =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC SUPC (PAC) */
+  SUPC_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC SUPC (SUPC) */
+  MCLK_IRQn                 =   0, /**< 0   Shared between MCLK OSCCTRL OSC32KCTRL PAC SUPC (MCLK) */
   WDT_IRQn                  =   1, /**< 1   Watchdog Timer (WDT)                */
   RTC_IRQn                  =   2, /**< 2   Real-Time Counter (RTC)             */
   EIC_IRQn                  =   3, /**< 3   External Interrupt Controller (EIC) */
@@ -151,7 +150,7 @@ typedef struct _DeviceVectors
   void* pfnSysTick_Handler;                      /*  -1 System Tick Timer */
 
   /* Peripheral handlers */
-  void* pfnSYSTEM_Handler;                       /*   0 System peripherals shared interrupt (MCLK OSCCTRL OSC32KCTRL PAC PM SUPC) */
+  void* pfnSYSTEM_Handler;                       /*   0 System peripherals shared interrupt (MCLK OSCCTRL OSC32KCTRL PAC SUPC) */
   void* pfnWDT_Handler;                          /*   1 Watchdog Timer (WDT) */
   void* pfnRTC_Handler;                          /*   2 Real-Time Counter (RTC) */
   void* pfnEIC_Handler;                          /*   3 External Interrupt Controller (EIC) */
@@ -289,6 +288,59 @@ void PTC_Handler                   ( void );
 #include "component/tsens.h"
 #include "component/wdt.h"
 /** @}  end of Peripheral Software API */
+
+/* ************************************************************************** */
+/*   INSTANCE DEFINITIONS FOR SAMC21N18A */
+/* ************************************************************************** */
+#include "instance/ac.h"
+#include "instance/adc0.h"
+#include "instance/adc1.h"
+#include "instance/can0.h"
+#include "instance/can1.h"
+#include "instance/ccl.h"
+#include "instance/dac.h"
+#include "instance/divas.h"
+#include "instance/dmac.h"
+#include "instance/dsu.h"
+#include "instance/eic.h"
+#include "instance/evsys.h"
+#include "instance/freqm.h"
+#include "instance/gclk.h"
+#include "instance/hmatrixhs.h"
+#include "instance/mclk.h"
+#include "instance/mtb.h"
+#include "instance/nvmctrl.h"
+#include "instance/osc32kctrl.h"
+#include "instance/oscctrl.h"
+#include "instance/pac.h"
+#include "instance/pm.h"
+#include "instance/port.h"
+#include "instance/ptc.h"
+#include "instance/rstc.h"
+#include "instance/rtc.h"
+#include "instance/sdadc.h"
+#include "instance/sercom0.h"
+#include "instance/sercom1.h"
+#include "instance/sercom2.h"
+#include "instance/sercom3.h"
+#include "instance/sercom4.h"
+#include "instance/sercom5.h"
+#include "instance/sercom6.h"
+#include "instance/sercom7.h"
+#include "instance/supc.h"
+#include "instance/tc0.h"
+#include "instance/tc1.h"
+#include "instance/tc2.h"
+#include "instance/tc3.h"
+#include "instance/tc4.h"
+#include "instance/tc5.h"
+#include "instance/tc6.h"
+#include "instance/tc7.h"
+#include "instance/tcc0.h"
+#include "instance/tcc1.h"
+#include "instance/tcc2.h"
+#include "instance/tsens.h"
+#include "instance/wdt.h"
 
 /** \addtogroup SAMC21N18A_id Peripheral Ids Definitions
  *  @{
@@ -625,6 +677,8 @@ void PTC_Handler                   ( void );
 #define EVENT_ID_GEN_AC_WIN_0                            77 /**< ID for AC event generator WIN_0 */
 #define EVENT_ID_GEN_AC_WIN_1                            78 /**< ID for AC event generator WIN_1 */
 #define EVENT_ID_GEN_DAC_EMPTY                           79 /**< ID for DAC event generator EMPTY */
+#define EVENT_ID_GEN_PTC_EOC                             80 /**< ID for PTC event generator EOC */
+#define EVENT_ID_GEN_PTC_WIN_COMP                        81 /**< ID for PTC event generator WIN_COMP */
 #define EVENT_ID_GEN_CCL_LUTOUT_0                        82 /**< ID for CCL event generator LUTOUT_0 */
 #define EVENT_ID_GEN_CCL_LUTOUT_1                        83 /**< ID for CCL event generator LUTOUT_1 */
 #define EVENT_ID_GEN_CCL_LUTOUT_2                        84 /**< ID for CCL event generator LUTOUT_2 */
