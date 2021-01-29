@@ -54,6 +54,7 @@
 */
 
 #include "plib_eic.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -67,7 +68,7 @@ void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
 	   EIC will be disabled. */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_SWRST_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
     {
@@ -101,16 +102,16 @@ void EIC_Initialize (void)
 
 
     /* Debouncer enable */
-    EIC_REGS->EIC_DEBOUNCEN = 0x8;
+    EIC_REGS->EIC_DEBOUNCEN = 0x8U;
 
     /* Event Control Output enable */
-    EIC_REGS->EIC_EVCTRL = 0x8;
+    EIC_REGS->EIC_EVCTRL = 0x8U;
 
     /* Debouncer Setting */
-    EIC_REGS->EIC_DPRESCALER = EIC_DPRESCALER_PRESCALER0(0) | EIC_DPRESCALER_PRESCALER1(0) ;
+    EIC_REGS->EIC_DPRESCALER = EIC_DPRESCALER_PRESCALER0(0UL) | EIC_DPRESCALER_PRESCALER1(0UL) ;
 
     /* Enable the EIC */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_ENABLE_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_ENABLE_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_ENABLE_Msk) == EIC_SYNCBUSY_ENABLE_Msk)
     {
