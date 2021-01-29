@@ -254,21 +254,21 @@ children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
   - type: Boolean
-    attributes: {id: NVIC_0_5_ENABLE}
+    attributes: {id: NVIC_0_4_ENABLE}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: 'false'}
   - type: String
-    attributes: {id: NVIC_0_5_HANDLER}
+    attributes: {id: NVIC_0_4_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: SUPC_Handler}
   - type: Boolean
-    attributes: {id: NVIC_0_5_HANDLER_LOCK}
+    attributes: {id: NVIC_0_4_HANDLER_LOCK}
     children:
     - type: Values
       children:
@@ -1393,6 +1393,8 @@ children:
     children:
     - type: Values
       children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
       - type: User
         attributes: {value: 'true'}
   - type: File
