@@ -50,25 +50,34 @@ void DIVAS_Initialize(void)
     /* Leading Zero optimization is by default enabled*/
 }
 
-#define _DIVAS_CRITICAL_ENTER()                        \
+#define DIVAS_CRITICAL_ENTER()                        \
     do {                                               \
         volatile uint32_t globalInterruptState;        \
         globalInterruptState = __get_PRIMASK();        \
         __disable_irq()
-#define _DIVAS_CRITICAL_LEAVE()                        \
+#define DIVAS_CRITICAL_LEAVE()                        \
         __set_PRIMASK(globalInterruptState);           \
     }                                                  \
-    while (0)
+    while (false)
 
 /* Return 32 bit result, the result only. */
-#define _divas_result32() (DIVAS_REGS->DIVAS_RESULT)
+static inline uint32_t divas_result32(void)
+{
+    return DIVAS_REGS->DIVAS_RESULT;
+}
 
 /* Return 64 bit result, the result and remainder. */
-#define _divas_result64() (*((uint64_t *)(&DIVAS_REGS->DIVAS_RESULT)))
-
-static inline void _divas_div(const uint8_t sign, const uint32_t dividend, const uint32_t divisor)
+static inline uint64_t divas_result64(void)
 {
-    DIVAS_REGS->DIVAS_CTRLA = (DIVAS_REGS->DIVAS_CTRLA & ~DIVAS_CTRLA_SIGNED_Msk) | sign ;
+    uint64_t res = (uint64_t)DIVAS_REGS->DIVAS_REM;
+    res <<= 32U;
+    res |= (uint64_t)(DIVAS_REGS->DIVAS_RESULT);
+    return res;
+}
+
+static inline void divas_div(const uint8_t sign, const uint32_t dividend, const uint32_t divisor)
+{
+    DIVAS_REGS->DIVAS_CTRLA = (uint8_t)(((uint32_t)DIVAS_REGS->DIVAS_CTRLA & ~DIVAS_CTRLA_SIGNED_Msk) | (uint32_t)sign);
     DIVAS_REGS->DIVAS_DIVIDEND = dividend;
     DIVAS_REGS->DIVAS_DIVISOR  = divisor;
     while((DIVAS_REGS->DIVAS_STATUS & DIVAS_STATUS_BUSY_Msk) == DIVAS_STATUS_BUSY_Msk)
@@ -81,10 +90,10 @@ static inline void _divas_div(const uint8_t sign, const uint32_t dividend, const
 int32_t DIVAS_DivSigned(int32_t numerator, int32_t denominator)
 {
     int32_t res;
-    _DIVAS_CRITICAL_ENTER();
-    _divas_div(1, numerator, denominator);
-    res = _divas_result32();
-    _DIVAS_CRITICAL_LEAVE();
+    DIVAS_CRITICAL_ENTER();
+    divas_div(1U, (uint32_t)numerator, (uint32_t)denominator);
+    res = (int32_t)divas_result32();
+    DIVAS_CRITICAL_LEAVE();
     return res;
 }
 
@@ -92,10 +101,10 @@ int32_t DIVAS_DivSigned(int32_t numerator, int32_t denominator)
 uint32_t DIVAS_DivUnsigned(uint32_t numerator, uint32_t denominator)
 {
     uint32_t res;
-    _DIVAS_CRITICAL_ENTER();
-    _divas_div(0, numerator, denominator);
-    res = _divas_result32();
-    _DIVAS_CRITICAL_LEAVE();
+    DIVAS_CRITICAL_ENTER();
+    divas_div(0U, numerator, denominator);
+    res = divas_result32();
+    DIVAS_CRITICAL_LEAVE();
     return res;
 }
 
@@ -103,10 +112,10 @@ uint32_t DIVAS_DivUnsigned(uint32_t numerator, uint32_t denominator)
 uint64_t DIVAS_DivmodSigned(int32_t numerator, int32_t denominator)
 {
     uint64_t res;
-    _DIVAS_CRITICAL_ENTER();
-    _divas_div(1, numerator, denominator);
-    res = _divas_result64();
-    _DIVAS_CRITICAL_LEAVE();
+    DIVAS_CRITICAL_ENTER();
+    divas_div(1U, (uint32_t)numerator, (uint32_t)denominator);
+    res = divas_result64();
+    DIVAS_CRITICAL_LEAVE();
     return res;
 }
 
@@ -114,25 +123,25 @@ uint64_t DIVAS_DivmodSigned(int32_t numerator, int32_t denominator)
 uint64_t DIVAS_DivmodUnsigned(uint32_t numerator, uint32_t denominator)
 {
     uint64_t res;
-    _DIVAS_CRITICAL_ENTER();
-    _divas_div(0, numerator, denominator);
-    res = _divas_result64();
-    _DIVAS_CRITICAL_LEAVE();
+    DIVAS_CRITICAL_ENTER();
+    divas_div(0U, numerator, denominator);
+    res = divas_result64();
+    DIVAS_CRITICAL_LEAVE();
     return res;
 }
 
 uint32_t DIVAS_SquareRoot(uint32_t number)
 {
-    uint32_t res = 0;
+    uint32_t res = 0U;
 
-    _DIVAS_CRITICAL_ENTER();
+    DIVAS_CRITICAL_ENTER();
     DIVAS_REGS->DIVAS_SQRNUM = number;
     while((DIVAS_REGS->DIVAS_STATUS & DIVAS_STATUS_BUSY_Msk) == DIVAS_STATUS_BUSY_Msk)
     {
         /* Wait for the square root to complete */
     }
     res = DIVAS_REGS->DIVAS_RESULT;
-    _DIVAS_CRITICAL_LEAVE();
+    DIVAS_CRITICAL_LEAVE();
 
 
     return res;
