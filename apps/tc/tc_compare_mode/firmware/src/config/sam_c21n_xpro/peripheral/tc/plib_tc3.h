@@ -94,7 +94,7 @@ void TC3_CompareStop( void );
 
 uint32_t TC3_CompareFrequencyGet( void );
 
-void TC3_Compare16bitPeriodSet( uint16_t period );
+bool TC3_Compare16bitPeriodSet( uint16_t period );
 
 uint16_t TC3_Compare16bitPeriodGet( void );
 
@@ -102,9 +102,9 @@ uint16_t TC3_Compare16bitCounterGet( void );
 
 void TC3_Compare16bitCounterSet( uint16_t count );
 
-void TC3_Compare16bitMatch0Set( uint16_t compareValue );
+bool TC3_Compare16bitMatch0Set( uint16_t compareValue );
 
-void TC3_Compare16bitMatch1Set( uint16_t compareValue );
+bool TC3_Compare16bitMatch1Set( uint16_t compareValue );
 
 
 
