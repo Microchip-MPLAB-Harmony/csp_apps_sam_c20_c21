@@ -141,6 +141,7 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3);
 
     STDIO_BufferModeSet();
@@ -155,6 +156,8 @@ void SYS_Initialize ( void* data )
 
 
     NVMCTRL_Initialize( );
+
+    EVSYS_Initialize();
 
 	SYSTICK_TimerInitialize();
     SERCOM4_USART_Initialize();
