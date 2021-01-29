@@ -1,0 +1,15 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: dac}
+children:
+- type: Symbols
+  children:
+  - type: KeyValueSet
+    attributes: {id: DAC_OUTPUT_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: dac, value: '2'}
+- type: ElementPosition
+  attributes: {x: '350', y: '60', id: dac}
