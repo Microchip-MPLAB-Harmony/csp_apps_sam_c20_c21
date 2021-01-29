@@ -1,0 +1,35 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tc0}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: TC_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc0, value: '48000000'}
+  - type: Long
+    attributes: {id: TC_TIMER_PERIOD}
+    children:
+    - type: Attributes
+      children:
+      - type: Long
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '65535'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc0, value: '479'}
+  - type: Float
+    attributes: {id: TC_TIMER_TIME_MS}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0.009999'}
+- type: ElementPosition
+  attributes: {x: '331', y: '59', id: tc0}

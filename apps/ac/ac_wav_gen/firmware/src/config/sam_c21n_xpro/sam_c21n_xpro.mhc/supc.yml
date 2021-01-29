@@ -1,0 +1,15 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: supc}
+children:
+- type: Symbols
+  children:
+  - type: KeyValueSet
+    attributes: {id: SUPC_VREF_SEL}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+- type: ElementPosition
+  attributes: {x: '614', y: '20', id: supc}
