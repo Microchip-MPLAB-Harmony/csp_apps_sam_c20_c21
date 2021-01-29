@@ -21,12 +21,6 @@ children:
   - type: KeyValueSet
     attributes: {id: SERCOM_MODE}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: readOnly}
-        children:
-        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -121,7 +115,7 @@ children:
       - type: Boolean
         attributes: {id: readOnly}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
     - type: Values
       children:
       - type: Dynamic

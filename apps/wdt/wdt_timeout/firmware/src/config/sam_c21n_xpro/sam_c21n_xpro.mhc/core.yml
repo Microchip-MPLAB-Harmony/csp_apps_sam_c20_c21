@@ -1682,6 +1682,8 @@ children:
     children:
     - type: Values
       children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
       - type: User
         attributes: {value: 'true'}
   - type: File
