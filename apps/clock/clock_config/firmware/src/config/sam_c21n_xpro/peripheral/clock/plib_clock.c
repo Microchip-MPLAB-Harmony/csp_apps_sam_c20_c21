@@ -40,17 +40,19 @@
 
 #include "plib_clock.h"
 #include "device.h"
+#include "interrupts.h"
+
 
 
 
 static void OSCCTRL_Initialize(void)
 {
-    uint32_t calibValue = (uint32_t)(((*(uint64_t*)0x806020) >> 19 ) & 0x3fffff);
+    uint32_t calibValue = (uint32_t)(((*(uint64_t*)0x806020UL) >> 19 ) & 0x3fffffUL);
     OSCCTRL_REGS->OSCCTRL_CAL48M = calibValue;
 
 
     /* Selection of the Division Value */
-    OSCCTRL_REGS->OSCCTRL_OSC48MDIV = OSCCTRL_OSC48MDIV_DIV(0);
+    OSCCTRL_REGS->OSCCTRL_OSC48MDIV = (uint8_t)OSCCTRL_OSC48MDIV_DIV(0UL);
 
     while((OSCCTRL_REGS->OSCCTRL_OSC48MSYNCBUSY & OSCCTRL_OSC48MSYNCBUSY_OSC48MDIV_Msk) == OSCCTRL_OSC48MSYNCBUSY_OSC48MDIV_Msk)
     {
@@ -65,9 +67,9 @@ static void OSCCTRL_Initialize(void)
 
 static void OSC32KCTRL_Initialize(void)
 {
-    OSC32KCTRL_REGS->OSC32KCTRL_OSC32K = 0x0;
+    OSC32KCTRL_REGS->OSC32KCTRL_OSC32K = 0x0UL;
 
-    OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
+    OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0UL);
 }
 
 
@@ -75,7 +77,7 @@ static void OSC32KCTRL_Initialize(void)
 static void GCLK0_Initialize(void)
 {
 
-    GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(1) | GCLK_GENCTRL_SRC(6) | GCLK_GENCTRL_GENEN_Msk;
+    GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(1UL) | GCLK_GENCTRL_SRC(6UL) | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL0_Msk) == GCLK_SYNCBUSY_GENCTRL0_Msk)
     {
@@ -86,7 +88,7 @@ static void GCLK0_Initialize(void)
 
 static void GCLK1_Initialize(void)
 {
-    GCLK_REGS->GCLK_GENCTRL[1] = GCLK_GENCTRL_DIV(12) | GCLK_GENCTRL_SRC(6) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
+    GCLK_REGS->GCLK_GENCTRL[1] = GCLK_GENCTRL_DIV(12UL) | GCLK_GENCTRL_SRC(6UL) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL1_Msk) == GCLK_SYNCBUSY_GENCTRL1_Msk)
     {
@@ -112,5 +114,6 @@ void CLOCK_Initialize (void)
 
 
 }
+
 
 
