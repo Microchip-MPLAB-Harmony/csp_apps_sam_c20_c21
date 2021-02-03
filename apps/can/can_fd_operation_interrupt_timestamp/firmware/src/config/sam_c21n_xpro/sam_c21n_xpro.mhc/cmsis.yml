@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: cmsis}
+children:
+- type: ElementPosition
+  attributes: {x: '286', y: '87', id: cmsis}
