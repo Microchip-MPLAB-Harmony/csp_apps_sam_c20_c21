@@ -36,6 +36,8 @@
           <itemPath>../src/config/sam_c21n_xpro/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_c21n_xpro/definitions.h</itemPath>
           <itemPath>../src/config/sam_c21n_xpro/device.h</itemPath>
+          <itemPath>../src/config/sam_c21n_xpro/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_c21n_xpro/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -73,10 +75,61 @@
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/tsens.h</itemPath>
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/wdt.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/adc0.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/adc1.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/can0.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/can1.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/ccl.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/divas.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/freqm.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/hmatrixhs.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/mclk.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/mtb.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/oscctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/pac.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/ptc.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sdadc.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom3.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom4.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom5.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom6.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/sercom7.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/supc.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc0.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc2.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc4.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc5.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc6.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tc7.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tcc0.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tcc2.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/tsens.h</itemPath>
+            <itemPath>../src/packs/ATSAMC21N18A_DFP/instance/wdt.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21N18A_DFP/pio/samc21n18a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMC21N18A_DFP/atsamc21n18a.h</itemPath>
+          <itemPath>../src/packs/ATSAMC21N18A_DFP/samc21n18a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -101,14 +154,28 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="sam_c21n_xpro.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/sercom0.yml</itemPath>
+        <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.mhc/settings.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_c21n_xpro/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_c21n_xpro/sam_c21n_xpro.xml</itemPath>
-      <itemPath>../../../../../../../../mhc/../csp_apps_sam_c20_c21/apps/sercom/usart/usart_lin/master/firmware/src/config/sam_c21n_xpro/sam_c21n_xpro.xml</itemPath>
+      <itemPath>../src/config/sam_c21n_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_c21n_xpro" projectFiles="true">
+          <itemPath>../src/config/sam_c21n_xpro/ATSAMC21N18A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -166,7 +233,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -192,6 +259,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -371,6 +439,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
@@ -385,7 +454,10 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/harmony/csp_apps_sam_c20_c21/apps/sercom/usart/usart_lin/master/firmware/sam_c21n_xpro.X/debug/sam_c21n_xpro/sam_c21n_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
