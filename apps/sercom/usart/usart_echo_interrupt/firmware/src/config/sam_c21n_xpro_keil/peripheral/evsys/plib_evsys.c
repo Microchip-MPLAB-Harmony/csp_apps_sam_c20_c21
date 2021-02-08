@@ -1,14 +1,14 @@
 /*******************************************************************************
-  NVIC PLIB Implementation
+  EVSYS Peripheral Library
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_nvic.c
+    plib_evsys.c
 
   Summary:
-    NVIC PLIB Source File
+    EVSYS Source File
 
   Description:
     None
@@ -38,60 +38,14 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-#include "device.h"
-#include "plib_nvic.h"
+#include "plib_evsys.h"
+#include "interrupts.h"
 
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: NVIC Implementation
-// *****************************************************************************
-// *****************************************************************************
-
-void NVIC_Initialize( void )
-{
-
-    /* Enable NVIC Controller */
-    __DMB();
-    __enable_irq();
-
-    /* Enable the interrupt sources and configure the priorities as configured
-     * from within the "Interrupt Manager" of MHC. */
-    NVIC_SetPriority(SERCOM4_IRQn, 3);
-    NVIC_EnableIRQ(SERCOM4_IRQn);
-
+void EVSYS_Initialize( void )
+{    /*Event Channel User Configuration*/
 
 
 }
 
-void NVIC_INT_Enable( void )
-{
-    __DMB();
-    __enable_irq();
-}
 
-bool NVIC_INT_Disable( void )
-{
-    bool processorStatus;
-
-    processorStatus = (bool) (__get_PRIMASK() == 0);
-
-    __disable_irq();
-    __DMB();
-
-    return processorStatus;
-}
-
-void NVIC_INT_Restore( bool state )
-{
-    if( state == true )
-    {
-        __DMB();
-        __enable_irq();
-    }
-    else
-    {
-        __disable_irq();
-        __DMB();
-    }
-}

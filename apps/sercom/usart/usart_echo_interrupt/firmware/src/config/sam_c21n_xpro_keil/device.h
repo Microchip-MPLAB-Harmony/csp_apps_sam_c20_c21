@@ -41,7 +41,17 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#include "atsamc21n18a.h"
+#ifndef DEVICE_H
+#define DEVICE_H
+
+#ifndef DONT_USE_PREDEFINED_CORE_HANDLERS
+    #define DONT_USE_PREDEFINED_CORE_HANDLERS
+#endif //DONT_USE_PREDEFINED_CORE_HANDLERS
+#ifndef DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
+    #define DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
+#endif //DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
+#include "samc21n18a.h"
 #include "device_cache.h"
 #include "toolchain_specifics.h"
 
+#endif //DEVICE_H

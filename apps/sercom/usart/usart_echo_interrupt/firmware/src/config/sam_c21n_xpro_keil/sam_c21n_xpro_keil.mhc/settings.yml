@@ -1,0 +1,14 @@
+configName: sam_c21n_xpro_keil
+folderName: ''
+format_version: v1.0
+frameworkPath: D:\Projects\h3
+processor: ATSAMC21N18A
+projectName: usart_echo_interrupt_sam_c21n_xpro_keil
+settings:
+  PackageFilter: bsp;core;csp;net;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.6.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAMC21_DFP\3.2.68\samc21n\atdf\ATSAMC21N18A.atdf
