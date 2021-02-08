@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-11-25T02:24:13Z */
+/* file generated from device description version 2020-12-11T17:47:32Z */
 #ifndef _SAMC21_FREQM_COMPONENT_H_
 #define _SAMC21_FREQM_COMPONENT_H_
 
