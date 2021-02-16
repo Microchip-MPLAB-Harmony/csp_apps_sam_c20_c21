@@ -8,6 +8,34 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Harmony 3 peripheral library application examples for SAM C20/C21 family  v3.1.0
+
+### Development kit and demo application support
+
+Following table provides number of peripheral library examples available for different development kits.
+
+| Development Kits  | MPLABx applications | KEIL applications |
+|:-----------------:|:-------------------:|:----------------:|
+| [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro) | 46 | 1 |
+| [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMC21-XPRO) | 1 | 0 |
+
+### New Features
+
+- None
+
+### Known Issues
+
+- None
+
+### Development Tools
+
+- [MPLAB® X IDE v5.45](https://www.microchip.com/mplab/mplab-x-ide)
+- MPLAB® X IDE plug-ins:
+  - MPLAB® Harmony Configurator (MHC) v3.7.0
+- [MPLAB® XC32 C/C++ Compiler v2.50](https://www.microchip.com/mplab/compilers)
+- [KEIL MDK v5.30](https://www2.keil.com/mdk5) or above
+
+
 ## Harmony 3 peripheral library application examples for SAM C20/C21 family  v3.0.2
 
 ### New Features
