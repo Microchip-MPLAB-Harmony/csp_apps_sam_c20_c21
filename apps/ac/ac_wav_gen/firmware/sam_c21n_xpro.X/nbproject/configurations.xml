@@ -243,7 +243,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMC21_DFP" vendor="Microchip" version="3.4.78"/>
+        <pack name="SAMC21_DFP" vendor="Microchip" version="3.5.95"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

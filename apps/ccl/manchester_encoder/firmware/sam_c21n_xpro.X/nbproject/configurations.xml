@@ -218,7 +218,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMC21_DFP" vendor="Microchip" version="3.4.78"/>
+        <pack name="SAMC21_DFP" vendor="Microchip" version="3.5.95"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
