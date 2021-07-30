@@ -56,6 +56,12 @@
 // *****************************************************************************
 // *****************************************************************************
 
+typedef enum
+{
+    /* EVSYS Channel 0 */
+    EVSYS_CHANNEL_0 = 0,
+} EVSYS_CHANNEL;
+
 typedef void (*EVSYS_CALLBACK)(uint32_t int_cause, uintptr_t context);
 
 typedef enum
@@ -64,12 +70,6 @@ typedef enum
    EVSYS_INT_EVENT_DETECT = EVSYS_INTENSET_EVD0_Msk,
 } EVSYS_INT_MASK;
 
-typedef enum
-{
-    /* EVSYS Channel 0 */
-    EVSYS_CHANNEL_0 = 0,
-} EVSYS_CHANNEL;
-
 typedef struct
 {
    EVSYS_CALLBACK          callback;
@@ -77,6 +77,10 @@ typedef struct
 } EVSYS_OBJECT ;
 /***************************** EVSYS API *******************************/
 void EVSYS_Initialize( void );
+void EVSYS_GeneratorEnable(EVSYS_CHANNEL channel, uint8_t generator);
+void EVSYS_GeneratorDisable(EVSYS_CHANNEL channel);
+void EVSYS_UserEnable(EVSYS_CHANNEL channel, uint8_t user);
+void EVSYS_UserDisable(uint8_t user);
 void EVSYS_CallbackRegister( EVSYS_CHANNEL channel, EVSYS_CALLBACK callback, uintptr_t context );
 void EVSYS_InterruptDisable( EVSYS_CHANNEL channel, EVSYS_INT_MASK interruptMask );
 void EVSYS_InterruptEnable( EVSYS_CHANNEL channel,EVSYS_INT_MASK interruptMask );
