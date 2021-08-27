@@ -1,0 +1,22 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: pm}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: PM_STDBYCFG_BBIASHS}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: PM_STDBYCFG_VREGSMOD}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+- type: ElementPosition
+  attributes: {x: '600', y: '20', id: pm}
