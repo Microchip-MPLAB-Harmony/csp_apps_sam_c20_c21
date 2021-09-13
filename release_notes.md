@@ -14,7 +14,7 @@ nav_order: 99
 
 Following table provides number of peripheral library examples available for different development kits.
 
-| Development Kits  | MPLABx applications | KEIL applications |
+| Development Kits  | MPLAB X applications | KEIL applications |
 |:-----------------:|:-------------------:|:----------------:|
 | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro) | 46 | 1 |
 | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMC21-XPRO) | 1 | 0 |
@@ -42,7 +42,7 @@ Following table provides number of peripheral library examples available for dif
 
 Following table provides number of peripheral library examples available for different development kits.
 
-| Development Kits  | MPLABx applications | KEIL applications |
+| Development Kits  | MPLAB X applications | KEIL applications |
 |:-----------------:|:-------------------:|:----------------:|
 | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro) | 46 | 1 |
 | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMC21-XPRO) | 1 | 0 |
@@ -98,7 +98,7 @@ Following table provides number of peripheral library examples available for dif
 
 Following table provides number of peripheral library examples available for different development kits.
 
-| Development Kits  | MPLABx applications | KEIL applications |
+| Development Kits  | MPLAB X applications | KEIL applications |
 |:-----------------:|:-------------------:|:----------------:|
 | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro) | 46 | 1 |
 | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMC21-XPRO) | 1 | 0 |
