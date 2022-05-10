@@ -62,10 +62,10 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#define ADC0_LINEARITY_POS  (0)
+#define ADC0_LINEARITY_POS  (0U)
 #define ADC0_LINEARITY_Msk   (0x7UL << ADC0_LINEARITY_POS)
 
-#define ADC0_BIASCAL_POS  (3)
+#define ADC0_BIASCAL_POS  (3U)
 #define ADC0_BIASCAL_Msk   (0x7UL << ADC0_BIASCAL_POS)
 
 
@@ -186,8 +186,7 @@ void ADC0_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC0_WindowModeSet(ADC_WINMODE mode)
 {
-    ADC0_REGS->ADC_CTRLC &= (uint16_t)(~ADC_CTRLC_WINMODE_Msk);
-    ADC0_REGS->ADC_CTRLC |= (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
+	ADC0_REGS->ADC_CTRLC =  (ADC0_REGS->ADC_CTRLC & (uint16_t)(~ADC_CTRLC_WINMODE_Msk)) | (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
     while(0U != (ADC0_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */
