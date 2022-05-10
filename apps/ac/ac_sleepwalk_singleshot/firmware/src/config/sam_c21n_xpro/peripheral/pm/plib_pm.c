@@ -64,10 +64,10 @@ void PM_Initialize( void )
 
 void PM_IdleModeEnter( void )
 {
-    /* Configure Idle Sleep mode */
-    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE_IDLE_Val;
+    PM_REGS->PM_SLEEPCFG = (uint8_t)PM_SLEEPCFG_SLEEPMODE(0UL);
 
-    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_IDLE_Val) == 0U)
+    
+    while ((PM_REGS->PM_SLEEPCFG & PM_SLEEPCFG_SLEEPMODE_Msk) != PM_SLEEPCFG_SLEEPMODE(0UL))
     {
         /* Ensure that SLEEPMODE bits are configured with the given value */
     }
