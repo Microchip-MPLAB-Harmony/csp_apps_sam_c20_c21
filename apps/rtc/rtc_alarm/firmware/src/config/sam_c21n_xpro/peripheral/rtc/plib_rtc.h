@@ -104,6 +104,8 @@ typedef struct
 } RTC_OBJECT;
 
 void RTC_Initialize(void);
+void RTC_RTCCClockSyncEnable ( void );
+void RTC_RTCCClockSyncDisable ( void );
 bool RTC_RTCCTimeSet (struct tm * initialTime );
 void RTC_RTCCTimeGet ( struct tm * currentTime );
 bool RTC_RTCCAlarmSet ( struct tm * alarmTime, RTC_ALARM_MASK mask );
