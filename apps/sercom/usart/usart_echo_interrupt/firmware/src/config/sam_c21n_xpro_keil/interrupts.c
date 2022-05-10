@@ -71,6 +71,9 @@ void __attribute__((section(".text.Dummy_Handler")))Dummy_Handler(void)
     {
     }
 }
+
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 8.6 deviated 33 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
 extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -107,6 +110,7 @@ extern void SDADC_Handler              ( void ) __attribute__((weak, alias("Dumm
 extern void PTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 
 
+/* MISRAC 2012 deviation block end */
 
 /* Multiple handlers for vector */
 
