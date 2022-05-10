@@ -67,13 +67,8 @@ extern "C"
 // Section: Interface Routines
 // *****************************************************************************
 // *****************************************************************************
-
-void DIVAS_Initialize(void);
-
-
 /* 32-bit Square Root */
 uint32_t DIVAS_SquareRoot (uint32_t number);
-
 #ifdef __cplusplus // Provide C++ Compatibility
  }
 #endif

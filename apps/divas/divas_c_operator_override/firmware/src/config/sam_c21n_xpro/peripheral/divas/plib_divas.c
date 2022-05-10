@@ -44,17 +44,6 @@
 #include "plib_divas.h"
 #include "device.h"
 
-/* Provide forward declaration for overloaded division operators */
-extern int32_t __aeabi_idiv(int32_t numerator, int32_t denominator);
-extern uint32_t __aeabi_uidiv(uint32_t numerator, uint32_t denominator);
-extern uint64_t __aeabi_idivmod(int32_t numerator, int32_t denominator);
-extern uint64_t __aeabi_uidivmod(uint32_t numerator, uint32_t denominator);
-
-void DIVAS_Initialize(void)
-{
-    /* Leading Zero optimization is by default enabled*/
-}
-
 #define DIVAS_CRITICAL_ENTER()                        \
     do {                                               \
         volatile uint32_t globalInterruptState;        \
@@ -64,6 +53,7 @@ void DIVAS_Initialize(void)
         __set_PRIMASK(globalInterruptState);           \
     }                                                  \
     while (false)
+
 
 /* Return 32 bit result, the result only. */
 static inline uint32_t divas_result32(void)
@@ -91,50 +81,6 @@ static inline void divas_div(const uint8_t sign, const uint32_t dividend, const 
     }
 }
 
-/* Do signed division, return result */
-int32_t __aeabi_idiv(int32_t numerator, int32_t denominator)
-{
-    int32_t res;
-    DIVAS_CRITICAL_ENTER();
-    divas_div(1U, (uint32_t)numerator, (uint32_t)denominator);
-    res = (int32_t)divas_result32();
-    DIVAS_CRITICAL_LEAVE();
-    return res;
-}
-
-/* Do unsigned division, return result */
-uint32_t __aeabi_uidiv(uint32_t numerator, uint32_t denominator)
-{
-    uint32_t res;
-    DIVAS_CRITICAL_ENTER();
-    divas_div(0U, numerator, denominator);
-    res = divas_result32();
-    DIVAS_CRITICAL_LEAVE();
-    return res;
-}
-
-/* Do signed division, return result and remainder */
-uint64_t __aeabi_idivmod(int32_t numerator, int32_t denominator)
-{
-    uint64_t res;
-    DIVAS_CRITICAL_ENTER();
-    divas_div(1U, (uint32_t)numerator, (uint32_t)denominator);
-    res = divas_result64();
-    DIVAS_CRITICAL_LEAVE();
-    return res;
-}
-
-/* Do unsigned division, return result and remainder */
-uint64_t __aeabi_uidivmod(uint32_t numerator, uint32_t denominator)
-{
-    uint64_t res;
-    DIVAS_CRITICAL_ENTER();
-    divas_div(0U, numerator, denominator);
-    res = divas_result64();
-    DIVAS_CRITICAL_LEAVE();
-    return res;
-}
-
 uint32_t DIVAS_SquareRoot(uint32_t number)
 {
     uint32_t res = 0U;
@@ -147,7 +93,57 @@ uint32_t DIVAS_SquareRoot(uint32_t number)
     }
     res = DIVAS_REGS->DIVAS_RESULT;
     DIVAS_CRITICAL_LEAVE();
-
-
     return res;
 }
+
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 21.2 deviated 8 times in this file.  Deviation record ID -  H3_MISRAC_2012_R_21_2_DR_1 */
+
+/* Do signed division, return result */
+extern int32_t __aeabi_idiv(int32_t numerator, int32_t denominator);
+int32_t __aeabi_idiv(int32_t numerator, int32_t denominator)
+{
+    int32_t res;
+    DIVAS_CRITICAL_ENTER();
+    divas_div(1U, (uint32_t)numerator, (uint32_t)denominator);
+    res = (int32_t)divas_result32();
+    DIVAS_CRITICAL_LEAVE();
+    return res;
+}
+
+/* Do unsigned division, return result */
+extern uint32_t __aeabi_uidiv(uint32_t numerator, uint32_t denominator);
+uint32_t __aeabi_uidiv(uint32_t numerator, uint32_t denominator)
+{
+    uint32_t res;
+    DIVAS_CRITICAL_ENTER();
+    divas_div(0U, numerator, denominator);
+    res = divas_result32();
+    DIVAS_CRITICAL_LEAVE();
+    return res;
+}
+
+/* Do signed division, return result and remainder */
+extern uint64_t __aeabi_idivmod(int32_t numerator, int32_t denominator);
+uint64_t __aeabi_idivmod(int32_t numerator, int32_t denominator)
+{
+    uint64_t res;
+    DIVAS_CRITICAL_ENTER();
+    divas_div(1U, (uint32_t)numerator, (uint32_t)denominator);
+    res = divas_result64();
+    DIVAS_CRITICAL_LEAVE();
+    return res;
+}
+
+/* Do unsigned division, return result and remainder */
+extern uint64_t __aeabi_uidivmod(uint32_t numerator, uint32_t denominator);
+uint64_t __aeabi_uidivmod(uint32_t numerator, uint32_t denominator)
+{
+    uint64_t res;
+    DIVAS_CRITICAL_ENTER();
+    divas_div(0U, numerator, denominator);
+    res = divas_result64();
+    DIVAS_CRITICAL_LEAVE();
+    return res;
+}
+

@@ -161,7 +161,6 @@ void SYS_Initialize ( void* data )
 
     SERCOM4_USART_Initialize();
 
-	DIVAS_Initialize();
 
 
 
