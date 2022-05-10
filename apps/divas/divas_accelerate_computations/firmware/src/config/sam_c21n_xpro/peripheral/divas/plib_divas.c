@@ -44,12 +44,6 @@
 #include "plib_divas.h"
 #include "device.h"
 
-
-void DIVAS_Initialize(void)
-{
-    /* Leading Zero optimization is by default enabled*/
-}
-
 #define DIVAS_CRITICAL_ENTER()                        \
     do {                                               \
         volatile uint32_t globalInterruptState;        \
@@ -59,6 +53,7 @@ void DIVAS_Initialize(void)
         __set_PRIMASK(globalInterruptState);           \
     }                                                  \
     while (false)
+
 
 /* Return 32 bit result, the result only. */
 static inline uint32_t divas_result32(void)
@@ -84,6 +79,21 @@ static inline void divas_div(const uint8_t sign, const uint32_t dividend, const 
     {
         /* Wait for the square root to complete */
     }
+}
+
+uint32_t DIVAS_SquareRoot(uint32_t number)
+{
+    uint32_t res = 0U;
+
+    DIVAS_CRITICAL_ENTER();
+    DIVAS_REGS->DIVAS_SQRNUM = number;
+    while((DIVAS_REGS->DIVAS_STATUS & DIVAS_STATUS_BUSY_Msk) == DIVAS_STATUS_BUSY_Msk)
+    {
+        /* Wait for the square root to complete */
+    }
+    res = DIVAS_REGS->DIVAS_RESULT;
+    DIVAS_CRITICAL_LEAVE();
+    return res;
 }
 
 /* 32-bit Signed division, return quotient */
@@ -127,22 +137,5 @@ uint64_t DIVAS_DivmodUnsigned(uint32_t numerator, uint32_t denominator)
     divas_div(0U, numerator, denominator);
     res = divas_result64();
     DIVAS_CRITICAL_LEAVE();
-    return res;
-}
-
-uint32_t DIVAS_SquareRoot(uint32_t number)
-{
-    uint32_t res = 0U;
-
-    DIVAS_CRITICAL_ENTER();
-    DIVAS_REGS->DIVAS_SQRNUM = number;
-    while((DIVAS_REGS->DIVAS_STATUS & DIVAS_STATUS_BUSY_Msk) == DIVAS_STATUS_BUSY_Msk)
-    {
-        /* Wait for the square root to complete */
-    }
-    res = DIVAS_REGS->DIVAS_RESULT;
-    DIVAS_CRITICAL_LEAVE();
-
-
     return res;
 }
