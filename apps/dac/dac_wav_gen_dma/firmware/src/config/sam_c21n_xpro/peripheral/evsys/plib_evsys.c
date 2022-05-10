@@ -53,7 +53,7 @@ void EVSYS_Initialize( void )
 
 
     /*Interrupt setting for Event System*/
-    EVSYS_REGS->EVSYS_INTENSET = 0x10000;
+    EVSYS_REGS->EVSYS_INTENSET = 0x10000U;
 }
 
 void EVSYS_GeneratorEnable(EVSYS_CHANNEL channel, uint8_t generator)
@@ -68,12 +68,12 @@ void EVSYS_GeneratorDisable(EVSYS_CHANNEL channel)
 
 void EVSYS_UserEnable(EVSYS_CHANNEL channel, uint8_t user)
 {
-   EVSYS_REGS->EVSYS_USER[user] = EVSYS_USER_CHANNEL((channel + 1));
+   EVSYS_REGS->EVSYS_USER[user] = EVSYS_USER_CHANNEL((channel + 1U));
 }
 
 void EVSYS_UserDisable(uint8_t user)
 {
-   EVSYS_REGS->EVSYS_USER[user] = 0x0;
+   EVSYS_REGS->EVSYS_USER[user] = 0x0U;
 }
 
 
@@ -95,9 +95,9 @@ void EVSYS_CallbackRegister(EVSYS_CHANNEL channel, EVSYS_CALLBACK callback, uint
 
 void EVSYS_InterruptHandler( void )
 {
-    uint8_t currentChannel = 0;
-    uint32_t eventIntFlagStatus = 0;
-    uint32_t overrunIntFlagStatus = 0;
+    uint8_t currentChannel = 0U;
+    uint32_t eventIntFlagStatus = 0U;
+    uint32_t overrunIntFlagStatus = 0U;
 
     /* Find any triggered channels, run associated callback handlers */
     for (currentChannel = 0U; currentChannel < 1U; currentChannel++)

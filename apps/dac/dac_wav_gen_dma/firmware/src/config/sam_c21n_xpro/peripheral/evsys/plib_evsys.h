@@ -56,11 +56,9 @@
 // *****************************************************************************
 // *****************************************************************************
 
-typedef enum
-{
     /* EVSYS Channel 0 */
-    EVSYS_CHANNEL_0 = 0,
-} EVSYS_CHANNEL;
+#define    EVSYS_CHANNEL_0   (0U)
+typedef uint32_t EVSYS_CHANNEL;
 
 typedef void (*EVSYS_CALLBACK)(uint32_t int_cause, uintptr_t context);
 
