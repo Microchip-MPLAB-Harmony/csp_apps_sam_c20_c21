@@ -77,6 +77,7 @@ The following applications are provided to demonstrate the typical or interestin
 | [SERCOM USART LIN Master](apps/sercom/usart/usart_lin/master/readme.md) | This example application demonstrates how to use the SERCOM USART peripheral in LIN Master mode |
 | [SERCOM USART LIN Slave](apps/sercom/usart/usart_lin/slave/readme.md) | This example application demonstrates how to use the SERCOM USART peripheral in LIN Slave mode |
 | [SERCOM USART ring buffer](apps/sercom/usart/usart_ring_buffer_interrupt/readme.md) | This example application demonstrates how to use the SERCOM peripheral in USART ring buffer mode to transfer data in a non-blocking manner |
+| [SERCOM USART Start of Frame (SOF) interrupt ](apps/sercom/usart/usart_sof_interrupt/readme.md) | This example application demonstrates how to use the SERCOM peripheral in USART ring buffer mode with SoF to wake-up device from sleep mode |
 | [Systick periodic interrupt](apps/systick/systick_periodic_timeout/readme.md) | This example shows how to use the SysTick to generate periodic interrupts |
 | [TC capture mode](apps/tc/tc_capture_mode/readme.md) | This example shows how to use the TC module in capture mode to measure duty cycle and frequency of an external input |
 | [TC compare mode](apps/tc/tc_compare_mode/readme.md) | This example shows how to use the TC module in compare mode to generate an active low, active high, and toggle output on compare match |
