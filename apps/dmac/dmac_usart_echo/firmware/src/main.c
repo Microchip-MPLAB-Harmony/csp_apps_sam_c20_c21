@@ -77,6 +77,8 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    LED_OFF();
+
     DMAC_ChannelCallbackRegister(DMAC_CHANNEL_0, TransmitCompleteCallback,0);
     DMAC_ChannelCallbackRegister(DMAC_CHANNEL_1, ReceiveCompleteCallback,0);
     DMAC_ChannelTransfer(DMAC_CHANNEL_0, &messageStart, (const void *)&SERCOM4_REGS->USART_INT.SERCOM_DATA, sizeof(messageStart));
