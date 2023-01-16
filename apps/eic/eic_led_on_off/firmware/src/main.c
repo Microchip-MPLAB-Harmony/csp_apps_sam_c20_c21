@@ -54,6 +54,8 @@
 
 static void EIC_User_Handler(uintptr_t context);
 
+#define LED_ON    LED_Clear
+#define LED_OFF   LED_Set
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
@@ -64,6 +66,8 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    LED_OFF();
+
     EIC_CallbackRegister(EIC_PIN_3,EIC_User_Handler, 0);
 
     while ( true )
