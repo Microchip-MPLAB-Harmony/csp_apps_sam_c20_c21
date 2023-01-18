@@ -71,16 +71,16 @@ uint8_t cmd = 0;
 
 void timeout (uintptr_t context)
 {
-    LED_Toggle();    
+    LED_Toggle();
 }
 
 void display_menu (void)
 {
     printf("\n\n\n\rSelect the low power mode to enter");
     printf("\n\ra) Idle Sleep Mode");
-    printf("\n\rb) Standby Sleep Mode"); 
-    
-    printf("\n\rEnter your choice");    
+    printf("\n\rb) Standby Sleep Mode");
+
+    printf("\n\rEnter your choice");
     scanf("%c", &cmd);
 }
 
@@ -94,16 +94,16 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    
+
     SYSTICK_TimerCallbackSet(&timeout, (uintptr_t) NULL);
     SYSTICK_TimerStart();
-    
+
     printf("\n\n\r----------------------------------------------");
     printf("\n\r                 LOW power demo using EIC"               );
-    printf("\n\r----------------------------------------------"); 
-    
+    printf("\n\r----------------------------------------------");
+
     display_menu();
-    
+
     while(1)
     {
         switch(cmd)
@@ -111,7 +111,7 @@ int main ( void )
             case IDLE_SLEEP_MODE:
             {
                 printf("\n\rEntering IDLE SLEEP Mode");
-                printf("\n\rPress SW0 to wakeup the device"); 
+                printf("\n\rPress SW0 to wakeup the device");
                 SYSTICK_TimerStop();
                 LED_OFF();
                 PM_IdleModeEnter();
@@ -123,12 +123,14 @@ int main ( void )
             case STANDBY_SLEEP_MODE:
             {
                 printf("\n\rEntering STANDBY SLEEP Mode");
-                printf("\n\rPress SW0 to wakeup the device");   
+                printf("\n\rPress SW0 to wakeup the device");
+                SYSTICK_DelayUs(1000);
                 SYSTICK_TimerStop();
                 LED_OFF();
                 PM_StandbyModeEnter();
-                printf("\n\rSW0 Pressed exiting standby sleep mode......");
                 SYSTICK_TimerStart();
+                SYSTICK_DelayUs(1000);
+                printf("\n\rSW0 Pressed exiting standby sleep mode......");
                 display_menu();
                 break;
             }
@@ -138,7 +140,7 @@ int main ( void )
                 display_menu();
                 break;
             }
-        } 
+        }
     }
 
     /* Execution should not come here during normal operation */
