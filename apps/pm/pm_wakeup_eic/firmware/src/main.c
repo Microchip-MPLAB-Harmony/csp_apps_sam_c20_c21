@@ -69,7 +69,7 @@ enum
 
 uint8_t cmd = 0;
 
-void timeout (uintptr_t context)
+void systick_timeout (uintptr_t context)
 {
     LED_Toggle();
 }
@@ -95,7 +95,7 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
-    SYSTICK_TimerCallbackSet(&timeout, (uintptr_t) NULL);
+    SYSTICK_TimerCallbackSet(&systick_timeout, (uintptr_t) NULL);
     SYSTICK_TimerStart();
 
     printf("\n\n\r----------------------------------------------");
