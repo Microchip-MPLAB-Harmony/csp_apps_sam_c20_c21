@@ -47,7 +47,7 @@
 #include "plib_ac.h"
 
 
-static AC_OBJECT acObj;
+volatile static AC_OBJECT acObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -63,7 +63,7 @@ void AC_Initialize(void)
     {
         /* Wait for Synchronization */
     }
-     
+
 
     /******************** Comparator 0 configurations ********************/
     AC_REGS->AC_COMPCTRL[0] = AC_COMPCTRL_MUXPOS_PIN0 | AC_COMPCTRL_MUXNEG_BANDGAP | AC_COMPCTRL_INTSEL_EOC | AC_COMPCTRL_OUT_OFF | AC_COMPCTRL_SPEED(0UL) | AC_COMPCTRL_FLEN_OFF | AC_COMPCTRL_SINGLE_Msk | AC_COMPCTRL_RUNSTDBY_Msk;
@@ -73,11 +73,12 @@ void AC_Initialize(void)
 
     AC_REGS->AC_EVCTRL = (uint16_t)( AC_EVCTRL_COMPEI0_Msk);
     AC_REGS->AC_INTENSET = (uint8_t)( AC_INTENSET_COMP0_Msk);
+
+    AC_REGS->AC_CTRLA = (uint8_t)AC_CTRLA_ENABLE_Msk;
     while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_ENABLE_Msk) == AC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for Synchronization */
     }
-    AC_REGS->AC_CTRLA = (uint8_t)AC_CTRLA_ENABLE_Msk;
 }
 
 void AC_Start( AC_CHANNEL channel_id )
@@ -93,21 +94,20 @@ void AC_SetVddScalar( AC_CHANNEL channel_id , uint8_t vdd_scalar)
 
 void AC_SwapInputs( AC_CHANNEL channel_id )
 {
-    /* Check Synchronization */
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
-    {
-        /* Wait for Synchronization */
-    }
     /* Disable comparator before swapping */
     AC_REGS->AC_COMPCTRL[channel_id] &= ~AC_COMPCTRL_ENABLE_Msk;
     /* Check Synchronization to ensure that the comparator is disabled */
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
+    while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
     }
     /* Swap inputs of the given comparator */
     AC_REGS->AC_COMPCTRL[channel_id] = AC_COMPCTRL_SWAP_Msk;
     AC_REGS->AC_COMPCTRL[channel_id] |= AC_COMPCTRL_ENABLE_Msk;
+    while((AC_REGS->AC_SYNCBUSY != 0U))
+    {
+        /* Wait for Synchronization */
+    }    
 }
 
 void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEGINPUT negativeInput)
@@ -115,7 +115,7 @@ void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEG
     /* Disable comparator before swapping */
     AC_REGS->AC_COMPCTRL[channel_id] &= ~AC_COMPCTRL_ENABLE_Msk;
     /* Check Synchronization to ensure that the comparator is disabled */
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
+    while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
     }
@@ -124,10 +124,10 @@ void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEG
 
     /* Enable comparator channel */
     AC_REGS->AC_COMPCTRL[channel_id] |= AC_COMPCTRL_ENABLE_Msk;
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
+    while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
-    }   
+    }
 
 }
 
@@ -156,16 +156,21 @@ void AC_CallbackRegister (AC_CALLBACK callback, uintptr_t context)
     acObj.context = context;
 }
 
-void AC_InterruptHandler( void )
+void __attribute__((used)) AC_InterruptHandler( void )
 {
+    /* Additional local variable to prevent MISRA C violations (Rule 13.x) */
+    uintptr_t context;
+    uint8_t status;
+    context = acObj.context;    
     /* Copy the status to use inside the callback */
     acObj.int_flags = AC_REGS->AC_STATUSA;
+    status = acObj.int_flags;    
     /* Clear the interrupt flags*/
     AC_REGS->AC_INTFLAG = (uint8_t)AC_INTFLAG_Msk;
 
     /* Callback user function */
     if(acObj.callback != NULL)
     {
-        acObj.callback(acObj.int_flags, acObj.context);
+        acObj.callback(status, context);
     }
 }

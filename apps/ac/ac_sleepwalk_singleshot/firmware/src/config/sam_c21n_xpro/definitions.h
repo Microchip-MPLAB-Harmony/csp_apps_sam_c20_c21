@@ -56,8 +56,8 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/pm/plib_pm.h"
 #include "peripheral/sercom/usart/plib_sercom4_usart.h"
-#include "peripheral/ac/plib_ac.h"
 #include "peripheral/rtc/plib_rtc.h"
+#include "peripheral/ac/plib_ac.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -66,6 +66,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAMC21N18A"
+#define DEVICE_ARCH			 "CORTEX-M0PLUS"
+#define DEVICE_FAMILY		 "SAMC"
+#define DEVICE_SERIES		 "SAMC21"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 48000000
