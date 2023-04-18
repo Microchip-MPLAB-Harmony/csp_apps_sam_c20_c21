@@ -41,7 +41,7 @@
 #include "plib_evsys.h"
 #include "interrupts.h"
 
-static EVSYS_OBJECT evsys[1];
+volatile static EVSYS_OBJECT evsys[1];
 
 void EVSYS_Initialize( void )
 {    /*Event Channel User Configuration*/
@@ -93,11 +93,13 @@ void EVSYS_CallbackRegister(EVSYS_CHANNEL channel, EVSYS_CALLBACK callback, uint
    evsys[channel].context = context;
 }
 
-void EVSYS_InterruptHandler( void )
+void __attribute__((used)) EVSYS_InterruptHandler( void )
 {
     uint8_t currentChannel = 0U;
     uint32_t eventIntFlagStatus = 0U;
     uint32_t overrunIntFlagStatus = 0U;
+
+    uintptr_t context_var;
 
     /* Find any triggered channels, run associated callback handlers */
     for (currentChannel = 0U; currentChannel < 1U; currentChannel++)
@@ -112,7 +114,8 @@ void EVSYS_InterruptHandler( void )
             /* Find any associated callback entries in the callback table */
             if (evsys[currentChannel].callback != NULL)
             {
-                evsys[currentChannel].callback(((eventIntFlagStatus | overrunIntFlagStatus) >> currentChannel), evsys[currentChannel].context);
+                context_var = evsys[currentChannel].context;
+                evsys[currentChannel].callback(((eventIntFlagStatus | overrunIntFlagStatus) >> currentChannel), context_var);
             }
 
             /* Clear interrupt flag */
