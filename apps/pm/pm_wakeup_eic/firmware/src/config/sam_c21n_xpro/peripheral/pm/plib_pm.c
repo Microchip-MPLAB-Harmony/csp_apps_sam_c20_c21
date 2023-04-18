@@ -58,7 +58,7 @@
 void PM_Initialize( void )
 {
     /* Configure PM */
-    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_VREGSMOD(2UL));
+    PM_REGS->PM_STDBYCFG = (uint16_t)(PM_STDBYCFG_BBIASHS_Msk| PM_STDBYCFG_VREGSMOD(2UL));
 
 }
 
