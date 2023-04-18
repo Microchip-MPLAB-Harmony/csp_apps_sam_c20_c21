@@ -1,4 +1,4 @@
-<config configName="sam_c21_xpro" projectName="usart_sof_interrupt_sam_c21_xpro" configVersion="1.1" device="ATSAMC21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_c21_xpro" projectName="usart_sof_interrupt_sam_c21_xpro" configVersion="1.1" device="ATSAMC21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -35,7 +35,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1202,7 +1202,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>0077b77f623ed3b6ddbb301cc9f53913ab903e233b9736bffcd07e3391c1184c</hash>
+         <hash>15aa962c76f320327cda12862451522ab1d6d0f3a333c1b19e1b41d18b946c5d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\component\port.h</file>
@@ -1222,7 +1222,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\clock\plib_clock.c</file>
-         <hash>6083c2ff8b78a96789786b465507815091424b1070e2dae620c6d7f402717955</hash>
+         <hash>d4f55094a740e89201f7175237527b99d493aa06e44d304d3a572174217734f9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\instance\adc1.h</file>
@@ -1245,8 +1245,12 @@
          <hash>01c269741541514e997ef61546f4dbb0e23f66e27c6a957162557f13b4638baf</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_c21_xpro\pin_configurations.csv</file>
+         <hash>971f64dcfb84565a1805b858df48f770fd35176da8c384500a73fa19d64de502</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_c21_xpro\definitions.h</file>
-         <hash>507ee1da919234d45cbfbf804adcbe4c4212114aeff9672cd0e3245c257d9969</hash>
+         <hash>4ffb695e80e15b8d8db48c46b64c081275d94c417f33d184b39d5c2f3d62ec3d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\component\tcc.h</file>
@@ -1254,7 +1258,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\exceptions.c</file>
-         <hash>b850253aacaae1bddfcb426c2dc11e0688900afffe9b22c60d0ab16298701118</hash>
+         <hash>5efbe5a64a17c496d2f5b177bc9cd66a7f0f80323d9558e220c073a13570a2a7</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm0plus.h</file>
@@ -1262,7 +1266,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3feca67a173d19d45961676a16f6153a6d849ecac98e906b62a343258c8bf43b</hash>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\instance\sercom3.h</file>
@@ -1282,11 +1286,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\sercom\usart\plib_sercom4_usart.c</file>
-         <hash>64298f3ad282fced4fd34a4f79c897820ff3a0675feeb43fca152015760b562a</hash>
+         <hash>d0611bdffbb389ff58ab52f6d0f53a1787903592b0fd18d5c7c92da569e31b3b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\sercom\usart\plib_sercom4_usart.h</file>
-         <hash>b07da3b4172eefecd291f8892bd6b0ecb609502098d91bfc59bceda782a11117</hash>
+         <hash>d133204c7223f09d0e16f67986626845593cb310746e457adc708cdfeffe9ded</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\instance\eic.h</file>
@@ -1314,7 +1318,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\instance\can0.h</file>
@@ -1326,7 +1330,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\startup_xc32.c</file>
-         <hash>d7ba451f4fffc267a5da6a83377b2b935a88cd73342f8a1f38ea8c39a86d963f</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -1366,7 +1370,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\port\plib_port.c</file>
-         <hash>4ce3347789e5b154d8627b54155ed368e8bef196fea753ec99effe4cbd871a9e</hash>
+         <hash>b70493fb68285aae1b1f55b21a31193e6a62e95df942bd7afc09ad00de3e6389</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\component\tc.h</file>
@@ -1426,7 +1430,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\initialization.c</file>
-         <hash>e367ef57cf5b2769220b268504e3e85e88e1ab0de850dbcbcb695c0585c9e21c</hash>
+         <hash>018252c30aa070be91a2efd0631ed8bd40bc780930cfb329a75acf3c46c07509</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\instance\sercom2.h</file>
@@ -1626,11 +1630,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\peripheral\nvic\plib_nvic.c</file>
-         <hash>9ea4dd150c00b2e1789c5acca6f93c3a172c3e67b4af5a3f3cc95132ea280e9c</hash>
+         <hash>3450f39ce63f5de9748b1c24df84db203c5e2e96641491dbb6792223d288f933</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\interrupts.c</file>
-         <hash>f0f5f187ee2673634252adf41c9b6f30c74609945d945ea6d234f5435db5bd5e</hash>
+         <hash>e8be1f51c1f1f0d26e4f1a1bd3208360761e0b895b8ae81929422167e88e5657</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\component\nvmctrl.h</file>
