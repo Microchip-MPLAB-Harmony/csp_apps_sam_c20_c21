@@ -61,7 +61,7 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-static ADC_CALLBACK_OBJ ADC0_CallbackObject;
+volatile static ADC_CALLBACK_OBJ ADC0_CallbackObject;
 
 #define ADC0_LINEARITY_POS  (0U)
 #define ADC0_LINEARITY_Msk   (0x7UL << ADC0_LINEARITY_POS)
@@ -89,7 +89,7 @@ void ADC0_Initialize( void )
     }
     /* Write linearity calibration in BIASREFBUF and bias calibration in BIASCOMP */
     uint32_t calib_low_word = (uint32_t)(*(uint64_t*)OTP5_ADDR);
-    ADC0_REGS->ADC_CALIB = (uint16_t)((ADC_CALIB_BIASREFBUF((calib_low_word & ADC0_LINEARITY_Msk) >> ADC0_LINEARITY_POS)) | 
+    ADC0_REGS->ADC_CALIB = (uint16_t)((ADC_CALIB_BIASREFBUF((calib_low_word & ADC0_LINEARITY_Msk) >> ADC0_LINEARITY_POS)) |
                                       (ADC_CALIB_BIASCOMP((calib_low_word & ADC0_BIASCAL_Msk) >> ADC0_BIASCAL_POS)));
 
     /* Prescaler */
@@ -193,7 +193,7 @@ void ADC0_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC0_WindowModeSet(ADC_WINMODE mode)
 {
-	ADC0_REGS->ADC_CTRLC =  (ADC0_REGS->ADC_CTRLC & (uint16_t)(~ADC_CTRLC_WINMODE_Msk)) | (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
+    ADC0_REGS->ADC_CTRLC =  (ADC0_REGS->ADC_CTRLC & (uint16_t)(~ADC_CTRLC_WINMODE_Msk)) | (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
     while(0U != (ADC0_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */
@@ -230,7 +230,7 @@ void ADC0_CallbackRegister( ADC_CALLBACK callback, uintptr_t context )
 }
 
 
-void ADC0_InterruptHandler( void )
+void __attribute__((used)) ADC0_InterruptHandler( void )
 {
     ADC_STATUS status;
     status = ADC0_REGS->ADC_INTFLAG;
@@ -238,7 +238,8 @@ void ADC0_InterruptHandler( void )
     ADC0_REGS->ADC_INTFLAG = (uint8_t)(ADC_INTENSET_WINMON_Msk);
     if (ADC0_CallbackObject.callback != NULL)
     {
-        ADC0_CallbackObject.callback(status, ADC0_CallbackObject.context);
+        uintptr_t context = ADC0_CallbackObject.context;
+        ADC0_CallbackObject.callback(status, context);
     }
 }
 /* Check whether result is ready */
