@@ -133,7 +133,7 @@ void TC0_CompareCommandSet(TC_COMMAND command)
     while((TC0_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current counter value */
@@ -176,7 +176,7 @@ bool TC0_Compare16bitPeriodSet( uint16_t period )
     while((TC0_REGS->COUNT16.TC_SYNCBUSY & TC_SYNCBUSY_CC0_Msk) == TC_SYNCBUSY_CC0_Msk)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
     status = true;
     return status;
 }
@@ -197,7 +197,7 @@ bool TC0_Compare16bitMatch0Set( uint16_t compareValue )
     while((TC0_REGS->COUNT16.TC_SYNCBUSY & TC_SYNCBUSY_CC0_Msk) == TC_SYNCBUSY_CC0_Msk)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
     status = true;
     return status;
 }
@@ -211,8 +211,8 @@ bool TC0_Compare16bitMatch1Set( uint16_t compareValue )
     while((TC0_REGS->COUNT16.TC_SYNCBUSY & TC_SYNCBUSY_CC1_Msk) == TC_SYNCBUSY_CC1_Msk)
     {
         /* Wait for Write Synchronization */
-    }  
-    status = true;  
+    }
+    status = true;
     return status;
 }
 
