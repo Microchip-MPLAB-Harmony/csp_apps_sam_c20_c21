@@ -10,7 +10,7 @@
     <aExt>*.s*; *.src; *.a*</aExt>
     <oExt>*.obj; *.o</oExt>
     <lExt>*.lib</lExt>
-    <tExt>*.txt; *.h; *.inc</tExt>
+    <tExt>*.txt; *.h; *.inc; *.md</tExt>
     <pExt>*.plm</pExt>
     <CppX>*.cpp</CppX>
     <nMigrate>0</nMigrate>
@@ -120,7 +120,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>UL2CM3</Key>
-          <Name>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0ATSAMC_256 -FS00 -FL040000 -FF1ATSAMC_256_EEPROM -FS1400000 -FL12000 -FP0($$Device:ATSAMC21N18A$Flash\ATSAMC_256.FLM) -FP1($$Device:ATSAMC21N18A$Flash\ATSAMC_256_EEPROM.FLM))</Name>
+          <Name>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0ATSAMC_256 -FS00 -FL040000 -FF1ATSAMC_256_EEPROM -FS1400000 -FL12000 -FP0($$Device:ATSAMC21N18A$samc21n\keil\Flash\ATSAMC_256.FLM) -FP1($$Device:ATSAMC21N18A$samc21n\keil\Flash\ATSAMC_256_EEPROM.FLM))</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
