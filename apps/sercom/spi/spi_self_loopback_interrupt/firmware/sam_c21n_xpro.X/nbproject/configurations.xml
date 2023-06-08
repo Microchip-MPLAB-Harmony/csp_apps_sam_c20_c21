@@ -151,6 +151,7 @@
     <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="true">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_c21n_xpro/harmony-manifest-success.yml</itemPath>
+      <itemPath>spi_self_loopback_interrupt_sam_c21n_xpro.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
