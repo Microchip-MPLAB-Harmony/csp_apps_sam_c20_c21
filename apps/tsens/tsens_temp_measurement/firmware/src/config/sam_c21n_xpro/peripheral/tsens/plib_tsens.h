@@ -98,7 +98,7 @@ void TSENS_ConversionStart( void );
 
 uint32_t TSENS_ConversionResultGet( void );
 
-void TSENS_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold);
+void TSENS_ComparisonWindowSet(uint32_t low_threshold, uint32_t high_threshold);
 
 void TSENS_WindowModeSet(TSENS_WINMODE mode);
 

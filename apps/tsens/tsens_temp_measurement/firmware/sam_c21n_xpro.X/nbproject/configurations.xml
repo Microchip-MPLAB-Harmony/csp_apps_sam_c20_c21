@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
+    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_c21n_xpro"
-                       displayName="sam_c21n_xpro"
-                       projectFiles="true">
+        <logicalFolder name="sam_c21n_xpro" displayName="sam_c21n_xpro" projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_c21n_xpro/peripheral/clock/plib_clock.h</itemPath>
@@ -48,9 +44,7 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
-        <logicalFolder name="ATSAMC21N18A_DFP"
-                       displayName="ATSAMC21N18A_DFP"
-                       projectFiles="true">
+        <logicalFolder name="ATSAMC21N18A_DFP" displayName="ATSAMC21N18A_DFP" projectFiles="true">
           <logicalFolder name="component" displayName="component" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/rstc.h</itemPath>
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/divas.h</itemPath>
@@ -162,24 +156,16 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
+    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_c21n_xpro"
-                       displayName="sam_c21n_xpro"
-                       projectFiles="true">
+        <logicalFolder name="sam_c21n_xpro" displayName="sam_c21n_xpro" projectFiles="true">
           <itemPath>../src/config/sam_c21n_xpro/ATSAMC21N18A.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
+    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_c21n_xpro"
-                       displayName="sam_c21n_xpro"
-                       projectFiles="true">
+        <logicalFolder name="sam_c21n_xpro" displayName="sam_c21n_xpro" projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_c21n_xpro/peripheral/clock/plib_clock.c</itemPath>
@@ -221,9 +207,7 @@
       <itemPath>../src/config/sam_c21n_xpro/pin_configurations.csv</itemPath>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
+    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>tsens_temp_measurement_sam_c21n_xpro.mc3</itemPath>
     </logicalFolder>
@@ -234,11 +218,11 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>ATSAMC21N18A</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.21</languageToolchainVersion>
+        <languageToolchainVersion>4.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -257,7 +241,7 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
@@ -265,9 +249,9 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPostStep/>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -281,8 +265,7 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+        <property key="extra-include-directories" value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -381,8 +364,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+        <property key="extra-include-directories" value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

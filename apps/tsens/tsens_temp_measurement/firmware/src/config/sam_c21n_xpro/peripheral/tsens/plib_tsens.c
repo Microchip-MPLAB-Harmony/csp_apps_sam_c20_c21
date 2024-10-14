@@ -136,7 +136,7 @@ void TSENS_ConversionStart( void )
 
 
 /* Configure window comparison threshold values */
-void TSENS_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
+void TSENS_ComparisonWindowSet(uint32_t low_threshold, uint32_t high_threshold)
 {
     TSENS_REGS->TSENS_WINLT = low_threshold;
     TSENS_REGS->TSENS_WINUT = high_threshold;
