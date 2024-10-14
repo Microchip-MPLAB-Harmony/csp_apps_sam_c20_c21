@@ -72,7 +72,7 @@ volatile static SERCOM_USART_RING_BUFFER_OBJECT sercom0USARTObj;
 #define SERCOM0_USART_READ_BUFFER_SIZE      128U
 #define SERCOM0_USART_READ_BUFFER_9BIT_SIZE     (128U >> 1U)
 #define SERCOM0_USART_RX_INT_DISABLE()      SERCOM0_REGS->USART_INT.SERCOM_INTENCLR = SERCOM_USART_INT_INTENCLR_RXC_Msk
-#define SERCOM0_USART_RX_INT_ENABLE()       SERCOM0_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_RXC_Msk
+#define SERCOM0_USART_RX_INT_ENABLE()       SERCOM0_REGS->$USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_RXC_Msk
 
 volatile static uint8_t SERCOM0_USART_ReadBuffer[SERCOM0_USART_READ_BUFFER_SIZE];
 
@@ -163,6 +163,7 @@ bool SERCOM0_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFr
     bool setupStatus       = false;
     uint32_t baudValue     = 0U;
     uint32_t sampleRate    = 0U;
+    uint32_t sampleCount   = 0U;
     float f_baudValue      = 0.0f;
     float f_temp           = 0.0f;
     uint32_t fractionPart  = 0U;
@@ -176,19 +177,25 @@ bool SERCOM0_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFr
 
         if(clkFrequency >= (16U * serialSetup->baudRate))
         {
-            f_baudValue = (float)clkFrequency/(16.0f * (float)serialSetup->baudRate);
-            f_temp = ((f_baudValue - ((float)((int)f_baudValue))) * 8.0f);
-            fractionPart = ((uint32_t)f_temp & 0xFFU);
-            baudValue = (uint32_t)f_baudValue;
-            if ((baudValue == 0U) || (baudValue >= 8192U))
-            {
-                baudValue = 0U;
-            }
-            else
-            {
-                baudValue |= (fractionPart << 13U);
-            }
             sampleRate = 1U;
+            sampleCount = 16U;
+        }
+        else
+        {
+            return setupStatus;
+        }
+
+        f_baudValue = (float)clkFrequency/((float)sampleCount * (float)serialSetup->baudRate);
+        f_temp = ((f_baudValue - ((float)((int)f_baudValue))) * 8.0f);
+        fractionPart = ((uint32_t)f_temp & 0xFFU);
+        baudValue = (uint32_t)f_baudValue;
+        if ((baudValue == 0U) || (baudValue >= 8192U))
+        {
+            baudValue = 0U;
+        }
+        else
+        {
+            baudValue |= (fractionPart << 13U);
         }
 
         /* Disable the USART before configurations */
