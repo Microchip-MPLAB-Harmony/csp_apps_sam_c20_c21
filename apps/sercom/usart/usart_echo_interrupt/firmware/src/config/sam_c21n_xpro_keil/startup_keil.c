@@ -56,7 +56,6 @@ void __attribute__((section(".text.Reset_Handler"))) Reset_Handler(void)
     }
 
 
-
 #  ifdef SCB_VTOR_TBLOFF_Msk
     /*  Set the vector-table base address in FLASH */
     pSrc = (uint32_t *) &__Vectors;
