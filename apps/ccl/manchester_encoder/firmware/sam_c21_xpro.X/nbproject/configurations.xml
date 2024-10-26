@@ -147,18 +147,6 @@
       </logicalFolder>
     </logicalFolder>
     <logicalFolder displayName="Important Files" name="ExternalFiles" projectFiles="true">
-      <logicalFolder displayName="sam_c21_xpro.mhc" name="f1" projectFiles="true">
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/ccl.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/sercom1.yml</itemPath>
-        <itemPath>../src/config/sam_c21_xpro/sam_c21_xpro.mhc/settings.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_c21_xpro/harmony-manifest-success.yml</itemPath>
       <itemPath>manchester_encoder_sam_c21_xpro.mc3</itemPath>

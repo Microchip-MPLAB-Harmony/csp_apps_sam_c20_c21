@@ -8,9 +8,6 @@
             <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_c21n_xpro/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="divas" projectFiles="true">
-              <itemPath>../src/config/sam_c21n_xpro/peripheral/divas/plib_divas.h</itemPath>
-            </logicalFolder>
             <logicalFolder name="f3" displayName="eic" projectFiles="true">
               <itemPath>../src/config/sam_c21n_xpro/peripheral/eic/plib_eic.h</itemPath>
             </logicalFolder>

@@ -23,11 +23,7 @@
             <logicalFolder name="f6" displayName="port" projectFiles="true">
               <itemPath>../src/config/sam_c21n_xpro/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="tc" projectFiles="true">
-              <itemPath>../src/config/sam_c21n_xpro/peripheral/tc/plib_tc_common.h</itemPath>
-              <itemPath>../src/config/sam_c21n_xpro/peripheral/tc/plib_tc0.h</itemPath>
             </logicalFolder>
-          </logicalFolder>
           <itemPath>../src/config/sam_c21n_xpro/device_cache.h</itemPath>
           <itemPath>../src/config/sam_c21n_xpro/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_c21n_xpro/definitions.h</itemPath>
