@@ -1,0 +1,85 @@
+configVersion: 1.0.0
+componentName: sdadc
+coreVersion: 5.8.2
+device: ATSAMC21N18A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: sdadc
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: sdadc
+          x: '180'
+          y: '99'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SDADC_CTRLB_OSR:
+      attributes:
+        id: SDADC_CTRLB_OSR
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SDADC_CTRLB_PRESCALER:
+      attributes:
+        id: SDADC_CTRLB_PRESCALER
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SDADC_INPUTCTRL_MUXSEL:
+      attributes:
+        id: SDADC_INPUTCTRL_MUXSEL
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SDADC_REFCTRL_REFSEL:
+      attributes:
+        id: SDADC_REFCTRL_REFSEL
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SDADC_TRIGGER:
+      attributes:
+        id: SDADC_TRIGGER
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+  userData: {}
