@@ -1,0 +1,56 @@
+configVersion: 1.0.0
+componentName: dac
+coreVersion: 5.8.2
+device: ATSAMC21N18A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: dac
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: dac
+          x: '17'
+          y: '63'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    DAC_DITHERING_MODE:
+      attributes:
+        id: DAC_DITHERING_MODE
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    DAC_OUTPUT_MODE:
+      attributes:
+        id: DAC_OUTPUT_MODE
+      children:
+      - children:
+        - attributes:
+            id: dac
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+  userData: {}
