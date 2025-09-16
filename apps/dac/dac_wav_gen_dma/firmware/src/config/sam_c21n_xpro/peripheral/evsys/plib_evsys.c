@@ -41,7 +41,7 @@
 #include "plib_evsys.h"
 #include "interrupts.h"
 
-volatile static EVSYS_OBJECT evsys[1];
+static volatile EVSYS_OBJECT evsys[1];
 
 void EVSYS_Initialize( void )
 {    /*Event Channel User Configuration*/
