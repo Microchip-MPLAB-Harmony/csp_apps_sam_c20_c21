@@ -47,7 +47,7 @@
 #include "plib_ac.h"
 
 
-volatile static AC_OBJECT acObj;
+static volatile AC_OBJECT acObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -106,7 +106,7 @@ void AC_SwapInputs( AC_CHANNEL channel_id )
     while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
-    }    
+    }
 }
 
 void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEGINPUT negativeInput)
@@ -160,10 +160,10 @@ void __attribute__((used)) AC_InterruptHandler( void )
     /* Additional local variable to prevent MISRA C violations (Rule 13.x) */
     uintptr_t context;
     uint8_t status;
-    context = acObj.context;    
+    context = acObj.context;
     /* Copy the status to use inside the callback */
     acObj.int_flags = AC_REGS->AC_STATUSA;
-    status = acObj.int_flags;    
+    status = acObj.int_flags;
     /* Clear the interrupt flags*/
     AC_REGS->AC_INTFLAG = (uint8_t)AC_INTFLAG_Msk;
 
