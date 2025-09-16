@@ -1,0 +1,73 @@
+configVersion: 1.0.0
+componentName: tsens
+coreVersion: 5.8.2
+device: ATSAMC21N18A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tsens
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: tsens
+          x: '241'
+          y: '164'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    TSENS_CONV_TRIGGER:
+      attributes:
+        id: TSENS_CONV_TRIGGER
+      children:
+      - children:
+        - attributes:
+            value: HW Event Trigger
+          type: User
+        type: Values
+      type: Combo
+    TSENS_EVCTRL_START:
+      attributes:
+        id: TSENS_EVCTRL_START
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TSENS_INTENSET_RESRDY:
+      attributes:
+        id: TSENS_INTENSET_RESRDY
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

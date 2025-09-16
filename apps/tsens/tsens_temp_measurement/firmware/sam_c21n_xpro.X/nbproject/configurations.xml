@@ -208,8 +208,21 @@
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
+      <logicalFolder name="tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro" displayName="tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro" projectFiles="true">
+        <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/mcc-config.mc4</itemPath>
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/cmsis.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/core.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/dfp.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/evsys.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/nvmctrl.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/sercom4.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/stdio.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/tc0.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/tsens.yml</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>tsens_temp_measurement_sam_c21n_xpro.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -222,7 +235,7 @@
         <targetPluginBoard/>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

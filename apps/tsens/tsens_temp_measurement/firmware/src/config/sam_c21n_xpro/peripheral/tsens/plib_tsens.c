@@ -61,7 +61,7 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-volatile static TSENS_CALLBACK_OBJ TSENS_CallbackObject;
+static volatile TSENS_CALLBACK_OBJ TSENS_CallbackObject;
 
 
 // *****************************************************************************
@@ -87,10 +87,10 @@ void TSENS_Initialize( void )
 
     TSENS_REGS->TSENS_CAL = TSENS_CAL_TCAL(calib_low_word & FUSES_TEMP_LOG_WORD_0_TSENS_TCAL_Msk) |
         TSENS_CAL_FCAL((calib_low_word & FUSES_TEMP_LOG_WORD_0_TSENS_FCAL_Msk) >> FUSES_TEMP_LOG_WORD_0_TSENS_FCAL_Pos );
-    
+
     TSENS_REGS->TSENS_GAIN = ((calib_high_word & 0xFU) << 20U) | ((calib_low_word & FUSES_TEMP_LOG_WORD_0_TSENS_GAIN_0_Msk) >> FUSES_TEMP_LOG_WORD_0_TSENS_GAIN_0_Pos ) ;
     TSENS_REGS->TSENS_OFFSET = calib_high_word >> FUSES_TEMP_LOG_WORD_1_TSENS_OFFSET_Pos;
-    
+
     /* Resolution & Operation Mode */
     TSENS_REGS->TSENS_CTRLC = TSENS_CTRLC_WINMODE(0UL) ;
     /* Clear all interrupt flags */
