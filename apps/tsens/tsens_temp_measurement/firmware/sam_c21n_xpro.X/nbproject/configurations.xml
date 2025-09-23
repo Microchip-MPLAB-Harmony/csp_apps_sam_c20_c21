@@ -1,9 +1,13 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_c21n_xpro" displayName="sam_c21n_xpro" projectFiles="true">
+        <logicalFolder name="sam_c21n_xpro"
+                       displayName="sam_c21n_xpro"
+                       projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_c21n_xpro/peripheral/clock/plib_clock.h</itemPath>
@@ -44,7 +48,9 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
-        <logicalFolder name="ATSAMC21N18A_DFP" displayName="ATSAMC21N18A_DFP" projectFiles="true">
+        <logicalFolder name="ATSAMC21N18A_DFP"
+                       displayName="ATSAMC21N18A_DFP"
+                       projectFiles="true">
           <logicalFolder name="component" displayName="component" projectFiles="true">
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/rstc.h</itemPath>
             <itemPath>../src/packs/ATSAMC21N18A_DFP/component/divas.h</itemPath>
@@ -156,16 +162,45 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro"
+                     displayName="tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/cmsis.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/core.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/dfp.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/evsys.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/nvmctrl.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/sercom4.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/stdio.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/tc0.yml</itemPath>
+          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/tsens.yml</itemPath>
+        </logicalFolder>
+        <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/mcc-config.mc4</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_c21n_xpro" displayName="sam_c21n_xpro" projectFiles="true">
+        <logicalFolder name="sam_c21n_xpro"
+                       displayName="sam_c21n_xpro"
+                       projectFiles="true">
           <itemPath>../src/config/sam_c21n_xpro/ATSAMC21N18A.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_c21n_xpro" displayName="sam_c21n_xpro" projectFiles="true">
+        <logicalFolder name="sam_c21n_xpro"
+                       displayName="sam_c21n_xpro"
+                       projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_c21n_xpro/peripheral/clock/plib_clock.c</itemPath>
@@ -207,23 +242,6 @@
       <itemPath>../src/config/sam_c21n_xpro/pin_configurations.csv</itemPath>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
-      <logicalFolder name="tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro" displayName="tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro" projectFiles="true">
-        <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/mcc-config.mc4</itemPath>
-        <logicalFolder name="components" displayName="components" projectFiles="true">
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/cmsis.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/core.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/dfp.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/evsys.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/nvmctrl.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/sercom4.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/stdio.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/tc0.yml</itemPath>
-          <itemPath>tsens_temp_measurement_sam_c21n_xpro_sam_c21n_xpro/components/tsens.yml</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -231,8 +249,8 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>ATSAMC21N18A</targetDevice>
-        <targetHeader/>
-        <targetPluginBoard/>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
@@ -254,7 +272,7 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile/>
+          <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
         </subordinates>
@@ -262,15 +280,15 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep/>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep/>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <C32>
-        <property key="additional-warnings" value="true"/>
+        <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
         <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
@@ -278,11 +296,12 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="optimization-level" value="-O1"/>
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
@@ -377,7 +396,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_c21n_xpro;../src/packs/ATSAMC21N18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
